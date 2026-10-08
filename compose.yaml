@@ -1,0 +1,35 @@
+name: sergey_rodionov
+services:
+  db:
+    image: postgres:16.10-bookworm
+    environment:
+      POSTGRES_DB: sergey_rodionov
+      POSTGRES_USER: sergey_rodionov
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copy .env.example to .env}
+    ports:
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sergey_rodionov -d sergey_rodionov"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://sergey_rodionov:${POSTGRES_PASSWORD}@db:5432/sergey_rodionov
+      DB_SCHEMA: sergey_rodionov
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env}
+      SESSION_HTTPS_ONLY: ${SESSION_HTTPS_ONLY:-false}
+      DEMO_LOGIN: ${DEMO_LOGIN:-demo}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-demo}
+    ports:
+      - "127.0.0.1:${APP_PORT:-8080}:8080"
+    volumes:
+      - ./measurements:/project/measurements
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  postgres_data:

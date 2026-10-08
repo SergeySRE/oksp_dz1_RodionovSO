@@ -1,0 +1,55 @@
+{
+  "date_moscow": "2026-10-08",
+  "methodology": "Методичка. ДЗ 1.docx; разделы 1 и 2, приложение А",
+  "methodology_issue": "В п. 2.10 после первого условия есть обрывки: проходят; число запросов на операцию; не найдено. Их недостающие части не восстановлены и не выдуманы.",
+  "measurement_source_review": {
+    "http": "HTTPX 0.28.1 Client.send stream=False calls response.read before returning",
+    "timer": "prepare before first clock; client.request between clocks; validation and finally cleanup after second clock",
+    "mutations": "active min appointment id=2 restored per cancellation; free_slot selection valid for nonoverlapping canonical seed; unique created contact removed and sequence restored",
+    "sql": "request ContextVar, same X-Measurement-Id, no diagnostic headers in baseline; no streaming or SQL-producing background work in measured endpoints",
+    "statistics": "linear interpolation (n-1)*p; maximum; growth ratio and delta; matched sample arithmetic means and per-sample residual",
+    "errors_found_affecting_saved_series": false,
+    "repeats_rerun": false,
+    "pytest_rerun": false,
+    "prior_test_result": "60 passed, 1 warning in 10.60s (previous run in chat; original stdout log not saved)"
+  },
+  "protected_results_sha256": {
+    "measurements/working_baseline_summary.csv": "9c2e8a22534995c1c0d70c700d905d61d476ee5b218aa8bae2954edb3cb21547",
+    "measurements/small_diagnostic_summary.csv": "3b7abdbab66af5caa8f5ee7a06dcb736a4ee5254350f26fa9be852277c226608",
+    "measurements/comparison.csv": "65936285d9a52f012e130a41405890408ff14ff790f83d97e98bcbf5479f9167",
+    "measurements/working_diagnostic.json": "cad3b275461dfc46d7b1ad681f03c02e955d8addb3278f90ed59255af8c10d50",
+    "measurements/small_diagnostic.json": "5828357eb978facd72497d9dc939f4c180b868eb3da3e68ac14ff6ed07981464",
+    "measurements/verification.json": "131f2ee592752a2e336897b7b41dd90c69e392dcb6ea7232d955eca4fc45e22a",
+    "measurements/working_diagnostic_summary.csv": "47fa2930622e00aeec48570d82c3d2c5970349436d5a05e95091adeb6d691041",
+    "measurements/working_baseline_raw.csv": "51fac288bd94fc1ba38d1a8ed0a78310d4509ace6f762f022dc0acafc7917cf4",
+    "measurements/business_logic.sha256.json": "001a4328222e6fbb191a37299d69bf54a6549ab8785e53b5328818e6798b7a51",
+    "measurements/small_baseline.json": "85dd970573d24e13ef54ca06d98fb643cacd2fed22abd4313a64b17e21e70cf9",
+    "measurements/working_diagnostic_raw.csv": "f28394197660ca725185a9d0bfad983cfdcd0b8646fbdf6d84f8dab93330a701",
+    "measurements/working_baseline.json": "c9296099b6775c86bb283211d0c31ed9f90597f2ee1fa4530fb010f0b4f13b6c",
+    "measurements/small_baseline_summary.csv": "f619f226e312a589af9cd518ae43fcca0225f281b046f5608a4212ba50aee7c4",
+    "measurements/comparison.json": "07d7d3e557304f6d615abf77665fede2c54478db5073f8d93b373772dc3d0729",
+    "measurements/small_baseline_raw.csv": "d9f681ea8636bea871a3462f9c2de78e77ce0339c2465ce33af61bbe5c3f9deb",
+    "measurements/small_diagnostic_raw.csv": "39cc8f6c2470cb03fed5135444bb014de56e8f1ee0713d0fa01515080424a7ef"
+  },
+  "missing": [
+    "screenshots",
+    "official formatted report with automatic contents",
+    "repository URL and verified teacher access",
+    "independent fresh-machine launch verification"
+  ],
+  "current_stand_read_only_check": {
+    "compose_services": "app running; db healthy",
+    "counts": {
+      "users": 1,
+      "specialists": 200,
+      "services": 30,
+      "slots": 200000,
+      "appointments": 100000
+    }
+  },
+  "current_source_matches_saved_series": true,
+  "original_measurement_files_preserved": true,
+  "raw_arithmetic_rechecked": false,
+  "viewer_smoke": "python3 scripts/view_measurements.py --section all succeeded; file dates/warmup/repeats visible",
+  "historical_docker_versions": "Engine/Compose versions not recorded in old JSON; not fabricated"
+}

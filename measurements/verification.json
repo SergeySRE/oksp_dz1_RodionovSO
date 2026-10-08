@@ -1,0 +1,83 @@
+{
+  "measurements": [
+    {
+      "file": "small_baseline.json",
+      "status": "complete",
+      "data_unchanged": true,
+      "samples": 300,
+      "operations": 10
+    },
+    {
+      "file": "working_baseline.json",
+      "status": "complete",
+      "data_unchanged": true,
+      "samples": 300,
+      "operations": 10
+    },
+    {
+      "file": "small_diagnostic.json",
+      "status": "complete",
+      "data_unchanged": true,
+      "samples": 120,
+      "operations": 4
+    },
+    {
+      "file": "working_diagnostic.json",
+      "status": "complete",
+      "data_unchanged": true,
+      "samples": 120,
+      "operations": 4
+    }
+  ],
+  "conditions_identical": true,
+  "business_logic_unchanged": true,
+  "business_source_sha256": {
+    "app/services.py": "7d797735051a97d8197e1f99ebcb3e63bd288e6333aa93ca2e3487b41bc8c2a3",
+    "app/api.py": "687f0109ee2b7ae74d88a0512ab349d11ce1f25d9f5c6a4dbf56757bdc918c2a",
+    "app/models.py": "55db997a9d1741fe54ad716b5353d174c13e7b033071e0819cbbe5418df92892",
+    "app/schemas.py": "a0502f213db0ed37d4a8f5b858b30435a99e2932ec7ad6cf47e0eb683262f1cb",
+    "app/auth.py": "5b7e23980886391472feaaa18991fb6893467d5bdd674d60727b9fb16d484f06",
+    "app/seed.py": "a27e8148caf50222c338687801b57aa6bb49fce14536e02e41f8165d20bacd8d"
+  },
+  "indexes": [
+    {
+      "name": "appointments_pkey",
+      "is_primary": true,
+      "definition": "CREATE UNIQUE INDEX appointments_pkey ON sergey_rodionov.appointments USING btree (id)"
+    },
+    {
+      "name": "services_pkey",
+      "is_primary": true,
+      "definition": "CREATE UNIQUE INDEX services_pkey ON sergey_rodionov.services USING btree (id)"
+    },
+    {
+      "name": "slots_pkey",
+      "is_primary": true,
+      "definition": "CREATE UNIQUE INDEX slots_pkey ON sergey_rodionov.slots USING btree (id)"
+    },
+    {
+      "name": "specialists_pkey",
+      "is_primary": true,
+      "definition": "CREATE UNIQUE INDEX specialists_pkey ON sergey_rodionov.specialists USING btree (id)"
+    },
+    {
+      "name": "users_pkey",
+      "is_primary": true,
+      "definition": "CREATE UNIQUE INDEX users_pkey ON sergey_rodionov.users USING btree (id)"
+    }
+  ],
+  "final_dataset": "working",
+  "final_data_counts": {
+    "services": 30,
+    "specialists": 200,
+    "users": 1,
+    "slots": 200000,
+    "appointments": 100000
+  },
+  "final_fingerprint": "06eb169eacca8fdac92f69337c43e955e16d9429688c4e31198c0f48a5cee50e",
+  "tests": {
+    "passed": 60,
+    "warnings": 1
+  },
+  "comparison_matches_raw_aggregates": true
+}

@@ -1,0 +1,13 @@
+ Container sergey_rodionov-db-1 Running 
+ Container sergey_rodionov-db-1 Waiting 
+ Container sergey_rodionov-db-1 Healthy 
+ Container sergey_rodionov-app-run-142ccdf00b76 Creating 
+ Container sergey_rodionov-app-run-142ccdf00b76 Created 
+............................................................             [100%]
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/starlette/testclient.py:37
+  /usr/local/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+60 passed, 1 warning in 15.11s

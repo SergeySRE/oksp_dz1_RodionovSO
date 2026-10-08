@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+<h1>Вход в сервис</h1>
+<p>Войдите под учётной записью оператора, чтобы работать с расписанием и записями.</p>
+<form class="narrow" data-api="/api/auth/login" data-success="/appointments">
+  <label>Логин<input name="login" required maxlength="64" autocomplete="username"></label>
+  <label>Пароль<input name="password" type="password" required maxlength="200" autocomplete="current-password"></label>
+  <button type="submit">Войти</button>
+</form>
+{% endblock %}

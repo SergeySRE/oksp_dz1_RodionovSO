@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Сводка{% endblock %}
+{% block content %}
+<h1>Сводка за период</h1>
+<form method="get" class="filters" data-filter>
+<label>С<input type="date" name="date_from" value="{{ data.date_from }}" required></label>
+<label>По<input type="date" name="date_to" value="{{ data.date_to }}" required></label>
+<button type="submit">Рассчитать</button>
+</form>
+<p><strong>Всего записей:</strong> {{ data.total_appointments }} ·
+<strong>Отменено:</strong> {{ data.cancelled_appointments }} ·
+<strong>Доля отмен:</strong> {{ data.cancellation_percent }}%</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Специалист</th><th>Расписание, мин.</th><th>Занято, мин.</th><th>Загрузка</th></tr></thead>
+<tbody>{% for item in data.specialists %}
+<tr><td>{{ item.full_name }}</td><td>{{ item.scheduled_minutes|round(1) }}</td>
+<td>{{ item.booked_minutes|round(1) }}</td><td>{% if item.load_percent is not none %}{{ item.load_percent }}%{% else %}Нет расписания{% endif %}</td></tr>
+{% endfor %}</tbody>
+</table></div>
+<p class="muted">Загрузка — занятое время / время расписания в периоде.
+Доля отмен — отменённые / все записи, интервалы которых пересекают период.
+Учитываются все данные выбранного периода. Пересечения расписания не суммируются дважды.</p>
+{% endblock %}

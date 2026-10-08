@@ -1,0 +1,5 @@
+<div class="pagination">
+  <span>Всего: {{ data.total }} · Страница {{ data.page }} из {{ pagination.pages }}</span>
+  {% if pagination.previous %}<a class="button secondary" href="{{ pagination.previous }}">Назад</a>{% endif %}
+  {% if pagination.next %}<a class="button secondary" href="{{ pagination.next }}">Вперёд</a>{% endif %}
+</div>

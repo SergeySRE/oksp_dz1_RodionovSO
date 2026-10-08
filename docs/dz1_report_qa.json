@@ -1,0 +1,89 @@
+{
+  "report": "docs/ДЗ1_Родионов_Сергей_отчёт.docx",
+  "checked_date_msk": "2026-10-08",
+  "report_sha256": "3c825f71c35999e8ebc6ff11d6c7f0c4052acb1d2956f40a908a7f9dccffed35",
+  "pages_rendered_and_visually_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "visual_defects": [],
+  "automatic_toc": true,
+  "toc_page_numbers_checked": [
+    [
+      "ЗАДАНИЕ И ВАРИАНТ",
+      3
+    ],
+    [
+      "ВВЕДЕНИЕ",
+      4
+    ],
+    [
+      "1 Сервис, стенд и данные",
+      5
+    ],
+    [
+      "1.1 Сервис и контракт",
+      5
+    ],
+    [
+      "1.2 Модульные тесты",
+      8
+    ],
+    [
+      "1.3 Условия испытания",
+      8
+    ],
+    [
+      "1.4 Наполнение базы данных",
+      10
+    ],
+    [
+      "2 Измерения",
+      11
+    ],
+    [
+      "2.1 Время ответа операций",
+      11
+    ],
+    [
+      "2.2 Разложение времени между приложением и базой данных",
+      12
+    ],
+    [
+      "3 Гипотезы об узких местах",
+      14
+    ],
+    [
+      "ЗАКЛЮЧЕНИЕ",
+      16
+    ],
+    [
+      "ПРИЛОЖЕНИЕ А РУЧНАЯ ОТМЕНА ЗАПИСИ",
+      17
+    ]
+  ],
+  "editable_tables": 6,
+  "five_non_repository_tables_unchanged": true,
+  "six_original_png_bytes_unchanged": true,
+  "styles_and_page_geometry_unchanged": true,
+  "repository_hyperlink": "https://github.com/SergeySRE/oksp_dz1_RodionovSO",
+  "clean_start_log_hyperlink": "dz1_clean_start.txt",
+  "methodology_2_10_note_removed_from_report": true,
+  "source_tests_and_measurement_files_unchanged": 43,
+  "tests_measurements_seed_not_run_during_publication": true
+}

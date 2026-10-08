@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Новая запись{% endblock %}
+{% block content %}
+<h1>Новая запись на приём</h1>
+<p>Выберите услугу и период, найдите свободный слот и заполните данные клиента.</p>
+<form method="get" class="filters" data-filter>
+  <label>Услуга<select name="service_id" required><option value="">Выберите услугу</option>{% for s in services %}
+    <option value="{{ s.id }}" {% if service_id == s.id %}selected{% endif %}>{{ s.name }} · {{ s.duration_minutes }} мин.</option>{% endfor %}</select></label>
+  <label>Специалист<select name="specialist_id"><option value="">Все</option>{% for s in specialists %}
+    <option value="{{ s.id }}" {% if specialist_id == s.id %}selected{% endif %}>{{ s.full_name }}</option>{% endfor %}</select></label>
+  <label>С<input type="date" name="date_from" value="{{ date_from }}" required></label>
+  <label>По<input type="date" name="date_to" value="{{ date_to }}" required></label>
+  <button type="submit">Найти слоты</button>
+</form>
+{% if data %}
+<form data-api="/api/appointments" data-success="appointment">
+<div class="table-wrap"><table>
+<thead><tr><th>Выбор</th><th>Специалист</th><th>Услуга</th><th>Начало (МСК)</th><th>Окончание (МСК)</th></tr></thead>
+<tbody>{% for item in data["items"] %}
+<tr><td><input type="radio" name="slot_id" value="{{ item.id }}" required aria-label="Выбрать слот {{ item.id }}"></td>
+<td>{{ item.specialist.full_name }}</td><td>{{ item.service.name }}</td>
+<td>{{ item.starts_at|localtime }}</td><td>{{ item.ends_at|localtime }}</td></tr>
+{% else %}<tr><td colspan="5">Свободных слотов по этим условиям нет.</td></tr>{% endfor %}</tbody>
+</table></div>
+{% include "pagination.html" %}
+{% if data.total %}
+<div class="filters">
+<label>ФИО клиента<input name="client_name" maxlength="200" required></label>
+<label>Контакт<input name="client_contact" maxlength="200" placeholder="Телефон или email" required></label>
+<button type="submit">Записать на приём</button>
+</div>
+{% endif %}
+</form>
+{% endif %}
+{% endblock %}

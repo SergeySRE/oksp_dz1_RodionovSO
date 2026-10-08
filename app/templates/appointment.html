@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Запись № {{ item.id }}{% endblock %}
+{% block content %}
+<h1>Запись № {{ item.id }}</h1>
+<dl class="details">
+<dt>Статус</dt><dd>{{ item.status|status_label }}</dd>
+<dt>Клиент</dt><dd>{{ item.client_name }}</dd>
+<dt>Контакт</dt><dd>{{ item.client_contact }}</dd>
+<dt>Специалист</dt><dd>{{ item.specialist.full_name }} · {{ item.specialist.specialization }}</dd>
+<dt>Услуга</dt><dd>{{ item.service.name }} · {{ item.service.duration_minutes }} мин.</dd>
+<dt>Начало (МСК)</dt><dd>{{ item.slot.starts_at|localtime }}</dd>
+<dt>Окончание (МСК)</dt><dd>{{ item.slot.ends_at|localtime }}</dd>
+<dt>Создана</dt><dd>{{ item.created_at|localtime }}</dd>
+<dt>Создал</dt><dd>{{ item.created_by.full_name }}</dd>
+<dt>Отменена</dt><dd>{{ item.cancelled_at|localtime }}</dd>
+</dl>
+{% if item.status == 'booked' %}
+<button type="button" data-cancel="{{ item.id }}">Отменить запись</button>
+{% else %}<p>Запись отменена. Освобождённый слот доступен для повторного бронирования.</p>{% endif %}
+<p><a href="/appointments">Вернуться к списку</a> · <a href="/booking">Новая запись</a></p>
+{% endblock %}

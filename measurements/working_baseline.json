@@ -1,0 +1,2668 @@
+{
+  "format_version": 1,
+  "kind": "baseline",
+  "size": "working",
+  "warmup": 5,
+  "repeats": 30,
+  "started_at_utc": "2026-10-07T17:39:38.404874+00:00",
+  "data_counts_before": {
+    "services": 30,
+    "specialists": 200,
+    "users": 1,
+    "slots": 200000,
+    "appointments": 100000
+  },
+  "data_fingerprint_before": "06eb169eacca8fdac92f69337c43e955e16d9429688c4e31198c0f48a5cee50e",
+  "conditions": {
+    "base_url": "http://127.0.0.1:8080",
+    "machine": {
+      "system": "Linux",
+      "node": "70fefff479e5",
+      "release": "6.18.40.1-microsoft-standard-WSL2",
+      "version": "#1 SMP PREEMPT_DYNAMIC Fri Jul 31 22:12:15 UTC 2026",
+      "machine": "x86_64",
+      "processor": ""
+    },
+    "cpu_model": "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz",
+    "logical_cpus": 8,
+    "memory": "MemTotal:        7965048 kB",
+    "cgroups": {
+      "cpu.max": "max 100000",
+      "memory.max": "max"
+    },
+    "python": "3.12.12",
+    "packages": {
+      "fastapi": "0.115.12",
+      "uvicorn": "0.34.2",
+      "SQLAlchemy": "2.0.40",
+      "psycopg": "3.2.6",
+      "Jinja2": "3.1.6",
+      "httpx": "0.28.1"
+    },
+    "postgres": "PostgreSQL 16.10 (Debian 16.10-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+    "postgres_settings": {
+      "shared_buffers": "128MB",
+      "work_mem": "4MB",
+      "max_connections": "100"
+    },
+    "business_source_sha256": {
+      "app/services.py": "7d797735051a97d8197e1f99ebcb3e63bd288e6333aa93ca2e3487b41bc8c2a3",
+      "app/api.py": "687f0109ee2b7ae74d88a0512ab349d11ce1f25d9f5c6a4dbf56757bdc918c2a",
+      "app/models.py": "55db997a9d1741fe54ad716b5353d174c13e7b033071e0819cbbe5418df92892",
+      "app/schemas.py": "a0502f213db0ed37d4a8f5b858b30435a99e2932ec7ad6cf47e0eb683262f1cb",
+      "app/auth.py": "5b7e23980886391472feaaa18991fb6893467d5bdd674d60727b9fb16d484f06",
+      "app/seed.py": "a27e8148caf50222c338687801b57aa6bb49fce14536e02e41f8165d20bacd8d"
+    },
+    "runner_source_sha256": "caada60071a42c27eb82920f6df8dc16edf192a37dead1bc8e423e345bda595d",
+    "observation_source_sha256": "213caaf2e309a660b491614f6f9b56451efa89277bb2153567d8e12b6e782f74",
+    "account": "demo",
+    "account_id": 1,
+    "http_transport": "HTTPX HTTP/1.1, keep-alive, trust_env=False, fully read response",
+    "client_location": "CLI process in the running application container",
+    "concurrency": 1,
+    "date_parameters": {
+      "date_from": "2026-01-01",
+      "date_to": "2026-12-31"
+    },
+    "clock": "time.perf_counter_ns",
+    "percentile_method": "linear interpolation at (n-1)*p",
+    "sql_scope": "before_cursor_execute to after_cursor_execute; includes driver/network; excludes commit/rollback calls, ORM processing and later fetch work",
+    "preparation": "Login/reset cookie, direct SQL restoration of mutation state and appointment sequence are outside timed HTTP requests"
+  },
+  "scenario": {
+    "login": {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "params": null,
+      "expected_status": 200,
+      "body_fields": [
+        "login",
+        "password"
+      ],
+      "slot_id": null
+    },
+    "logout": {
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "params": null,
+      "expected_status": 204,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "services": {
+      "method": "GET",
+      "path": "/api/services",
+      "params": null,
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "specialists": {
+      "method": "GET",
+      "path": "/api/specialists",
+      "params": null,
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "free_slots": {
+      "method": "GET",
+      "path": "/api/slots",
+      "params": {
+        "date_from": "2026-01-01",
+        "date_to": "2026-12-31",
+        "service_id": 1,
+        "page": 1,
+        "size": 20
+      },
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "appointments_list": {
+      "method": "GET",
+      "path": "/api/appointments",
+      "params": {
+        "page": 1,
+        "size": 20
+      },
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "appointment_detail": {
+      "method": "GET",
+      "path": "/api/appointments/2",
+      "params": null,
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "appointment_create": {
+      "method": "POST",
+      "path": "/api/appointments",
+      "params": null,
+      "expected_status": 201,
+      "body_fields": [
+        "client_contact",
+        "client_name",
+        "slot_id"
+      ],
+      "slot_id": 1
+    },
+    "appointment_cancel": {
+      "method": "POST",
+      "path": "/api/appointments/2/cancel",
+      "params": null,
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    },
+    "summary": {
+      "method": "GET",
+      "path": "/api/summary",
+      "params": {
+        "date_from": "2026-01-01",
+        "date_to": "2026-12-31"
+      },
+      "expected_status": 200,
+      "body_fields": [],
+      "slot_id": null
+    }
+  },
+  "aggregated": [
+    {
+      "operation": "login",
+      "repeats": 30,
+      "p50_ms": 59.5317375,
+      "p95_ms": 62.978182,
+      "max_ms": 68.599485,
+      "http_total_ms": 60.26399703333333
+    },
+    {
+      "operation": "logout",
+      "repeats": 30,
+      "p50_ms": 5.436049,
+      "p95_ms": 7.133058449999998,
+      "max_ms": 8.387898,
+      "http_total_ms": 5.5292455
+    },
+    {
+      "operation": "services",
+      "repeats": 30,
+      "p50_ms": 5.155548,
+      "p95_ms": 6.938178549999999,
+      "max_ms": 7.833998,
+      "http_total_ms": 5.305738833333334
+    },
+    {
+      "operation": "specialists",
+      "repeats": 30,
+      "p50_ms": 7.898548,
+      "p95_ms": 9.302437999999999,
+      "max_ms": 9.948798,
+      "http_total_ms": 8.076428233333333
+    },
+    {
+      "operation": "free_slots",
+      "repeats": 30,
+      "p50_ms": 398.444246,
+      "p95_ms": 475.66696219999983,
+      "max_ms": 524.489029,
+      "http_total_ms": 396.0470736666667
+    },
+    {
+      "operation": "appointments_list",
+      "repeats": 30,
+      "p50_ms": 202.2074345,
+      "p95_ms": 292.35501099999993,
+      "max_ms": 312.163254,
+      "http_total_ms": 208.5086143
+    },
+    {
+      "operation": "appointment_detail",
+      "repeats": 30,
+      "p50_ms": 8.668101,
+      "p95_ms": 13.536797449999998,
+      "max_ms": 14.587203,
+      "http_total_ms": 9.274418266666666
+    },
+    {
+      "operation": "appointment_create",
+      "repeats": 30,
+      "p50_ms": 39.953756999999996,
+      "p95_ms": 55.86075954999998,
+      "max_ms": 83.063814,
+      "http_total_ms": 41.044373633333336
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeats": 30,
+      "p50_ms": 17.939053,
+      "p95_ms": 23.683293999999997,
+      "max_ms": 24.834304,
+      "http_total_ms": 18.020609666666665
+    },
+    {
+      "operation": "summary",
+      "repeats": 30,
+      "p50_ms": 2409.6635015,
+      "p95_ms": 3323.6613103,
+      "max_ms": 3502.872617,
+      "http_total_ms": 2505.838477566667
+    }
+  ],
+  "raw": [
+    {
+      "operation": "login",
+      "repeat": 1,
+      "request_id": "be306e3848594f36862e5cc6a3056c87",
+      "status_code": 200,
+      "http_total_ms": 61.784987,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 2,
+      "request_id": "567ecfd78e9f4ce0a1ac21fd2f380f22",
+      "status_code": 200,
+      "http_total_ms": 62.054587,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 3,
+      "request_id": "ea4f3a6841e0463c91907827ee59ce60",
+      "status_code": 200,
+      "http_total_ms": 60.241187,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 4,
+      "request_id": "a0ae4a92645642c5ab01507e4b53690f",
+      "status_code": 200,
+      "http_total_ms": 60.719487,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 5,
+      "request_id": "04f4033578aa40f39ba69d71447aa88c",
+      "status_code": 200,
+      "http_total_ms": 59.024787,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 6,
+      "request_id": "4336b747fdb642f6b58e7b1b1a98bfbf",
+      "status_code": 200,
+      "http_total_ms": 59.318287,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 7,
+      "request_id": "fddc358217e24276bc9a685d4d7cf2d3",
+      "status_code": 200,
+      "http_total_ms": 61.920187,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 8,
+      "request_id": "66fb37ddd117461488b33fef4023339e",
+      "status_code": 200,
+      "http_total_ms": 60.806487,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 9,
+      "request_id": "d7774ae1027a4216a171c24dcc0550d3",
+      "status_code": 200,
+      "http_total_ms": 58.701387,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 10,
+      "request_id": "09f545bee3a64173a7dad6f5eb4ae454",
+      "status_code": 200,
+      "http_total_ms": 59.223387,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 11,
+      "request_id": "0ff3e3fa6d5f4e42a9e3bc65cabd7211",
+      "status_code": 200,
+      "http_total_ms": 62.734587,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 12,
+      "request_id": "04203fd8ae614f8c82e7008a68d06526",
+      "status_code": 200,
+      "http_total_ms": 59.308787,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 13,
+      "request_id": "20b076a2c976446d8afefe102f7cb4ef",
+      "status_code": 200,
+      "http_total_ms": 57.897288,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 14,
+      "request_id": "3fc6a934a57e402d80f832f3919c7c87",
+      "status_code": 200,
+      "http_total_ms": 58.472287,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 15,
+      "request_id": "6ff8d23229cb4b5a810d83c973b7d307",
+      "status_code": 200,
+      "http_total_ms": 59.202587,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 16,
+      "request_id": "4c39be230cbe4159a4d74227bb58f579",
+      "status_code": 200,
+      "http_total_ms": 61.654387,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 17,
+      "request_id": "d707a62c217f4d3a82990f1b40c97eee",
+      "status_code": 200,
+      "http_total_ms": 58.523287,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 18,
+      "request_id": "b88e3689406b4e0496a8802bcad7c55c",
+      "status_code": 200,
+      "http_total_ms": 60.646587,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 19,
+      "request_id": "bdf1f8f19d70404d83deb2d76c9564e8",
+      "status_code": 200,
+      "http_total_ms": 61.325587,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 20,
+      "request_id": "16d38a5a938b4632a665359e8352310b",
+      "status_code": 200,
+      "http_total_ms": 68.599485,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 21,
+      "request_id": "d367d12c58ef40adb365c137e16ed1d9",
+      "status_code": 200,
+      "http_total_ms": 63.177487,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 22,
+      "request_id": "023db1bddd1b4a1abd2a2bdbc9e65bf5",
+      "status_code": 200,
+      "http_total_ms": 59.248687,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 23,
+      "request_id": "ae05e84f7a9b46058a7dd871cfe64cd3",
+      "status_code": 200,
+      "http_total_ms": 60.166187,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 24,
+      "request_id": "5c8a3f3063a84860add1bb89e4fb87b9",
+      "status_code": 200,
+      "http_total_ms": 58.349388,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 25,
+      "request_id": "2f69f5102314494aa63f1bec5e36a2ed",
+      "status_code": 200,
+      "http_total_ms": 60.672487,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 26,
+      "request_id": "9d80c91e50184dacb77196811194cdad",
+      "status_code": 200,
+      "http_total_ms": 57.118387,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 27,
+      "request_id": "b3377b6841cf43c18a3e8d462181564f",
+      "status_code": 200,
+      "http_total_ms": 59.588187,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 28,
+      "request_id": "361d2b8ba54a4c75a8da3a08a2d0ba98",
+      "status_code": 200,
+      "http_total_ms": 59.475288,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 29,
+      "request_id": "9309771e900b4fc7b0e5d7b2319fe225",
+      "status_code": 200,
+      "http_total_ms": 58.713987,
+      "response_bytes": 84
+    },
+    {
+      "operation": "login",
+      "repeat": 30,
+      "request_id": "ce5619a5b1c84b6a8d9dd13cfcbdb49c",
+      "status_code": 200,
+      "http_total_ms": 59.250187,
+      "response_bytes": 84
+    },
+    {
+      "operation": "logout",
+      "repeat": 1,
+      "request_id": "a5829c2d656740b98115d675c8d7af66",
+      "status_code": 204,
+      "http_total_ms": 5.491499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 2,
+      "request_id": "c8f7ed15f5664edaba2eca374f8fb178",
+      "status_code": 204,
+      "http_total_ms": 5.897499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 3,
+      "request_id": "6facc53fff4842bea53989fd7bc307a6",
+      "status_code": 204,
+      "http_total_ms": 5.532499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 4,
+      "request_id": "f52b4e27caee48e1bdc0dc242f0422a8",
+      "status_code": 204,
+      "http_total_ms": 5.317399,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 5,
+      "request_id": "94bfbedf34214961ac79214b3b318474",
+      "status_code": 204,
+      "http_total_ms": 5.550798,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 6,
+      "request_id": "9f3a3205a7b24b168ff3036fd4581c76",
+      "status_code": 204,
+      "http_total_ms": 5.439499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 7,
+      "request_id": "9b88dc9079844cfa9d6ded7baaad6ebe",
+      "status_code": 204,
+      "http_total_ms": 5.677499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 8,
+      "request_id": "daad311b0bf7437f97cacd76c0abb6a2",
+      "status_code": 204,
+      "http_total_ms": 5.158199,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 9,
+      "request_id": "62f980188e064c2794af40dcab3981c4",
+      "status_code": 204,
+      "http_total_ms": 5.130298,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 10,
+      "request_id": "f96c7d6238344b07a42edcaca23923f9",
+      "status_code": 204,
+      "http_total_ms": 4.544899,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 11,
+      "request_id": "d7b447f6b0ef497699bf250e6c36c70e",
+      "status_code": 204,
+      "http_total_ms": 5.060699,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 12,
+      "request_id": "0cdccd05e98f4c298f99c2671d563b13",
+      "status_code": 204,
+      "http_total_ms": 5.287299,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 13,
+      "request_id": "4d9c411e5fbe4c21a47d033d74f988d7",
+      "status_code": 204,
+      "http_total_ms": 5.981499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 14,
+      "request_id": "f2d002610437402d83d84ffdedc6ec4d",
+      "status_code": 204,
+      "http_total_ms": 5.613599,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 15,
+      "request_id": "0fdc33255ca146df810078a105240833",
+      "status_code": 204,
+      "http_total_ms": 6.263398,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 16,
+      "request_id": "531600d2b54d4f06bd4c6ed12d245d91",
+      "status_code": 204,
+      "http_total_ms": 6.735299,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 17,
+      "request_id": "358208c2df1b4609925c803b08b39955",
+      "status_code": 204,
+      "http_total_ms": 7.458498,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 18,
+      "request_id": "26418b7ed11c4106a871d87cd65f221b",
+      "status_code": 204,
+      "http_total_ms": 8.387898,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 19,
+      "request_id": "d1ec942e3fc8458ea1a09c7502434e57",
+      "status_code": 204,
+      "http_total_ms": 5.704799,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 20,
+      "request_id": "6db2c925e91f48d6abcc74be473cd5b9",
+      "status_code": 204,
+      "http_total_ms": 4.610899,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 21,
+      "request_id": "273232cfa65b4c129ad516bedbc30808",
+      "status_code": 204,
+      "http_total_ms": 5.432599,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 22,
+      "request_id": "fec9297404a94ece93a2875a4cd81306",
+      "status_code": 204,
+      "http_total_ms": 4.720399,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 23,
+      "request_id": "e5218a3ce07c4eccbab7d30aa2ea6d1c",
+      "status_code": 204,
+      "http_total_ms": 5.371699,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 24,
+      "request_id": "80b70dbb97e14e499ecf8b57a6707d84",
+      "status_code": 204,
+      "http_total_ms": 5.541099,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 25,
+      "request_id": "c656c084d1b941a9925b6d9a2cc441bd",
+      "status_code": 204,
+      "http_total_ms": 5.848299,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 26,
+      "request_id": "4141f1a378d14df28ebb24e3b2878125",
+      "status_code": 204,
+      "http_total_ms": 5.359798,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 27,
+      "request_id": "0c78ff6862cc41e5b9e6e2f58c929604",
+      "status_code": 204,
+      "http_total_ms": 4.3864,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 28,
+      "request_id": "b732b98a8f8248af8c954b8b670346c1",
+      "status_code": 204,
+      "http_total_ms": 5.161599,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 29,
+      "request_id": "7da4f4715e99459d83f5d54689d4c3bc",
+      "status_code": 204,
+      "http_total_ms": 4.555499,
+      "response_bytes": 0
+    },
+    {
+      "operation": "logout",
+      "repeat": 30,
+      "request_id": "da2a89bb4c5c40ac84a48c94b5869ddc",
+      "status_code": 204,
+      "http_total_ms": 4.655999,
+      "response_bytes": 0
+    },
+    {
+      "operation": "services",
+      "repeat": 1,
+      "request_id": "64c9d281da724ee8b0c6226d8193b7a8",
+      "status_code": 200,
+      "http_total_ms": 7.833998,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 2,
+      "request_id": "4bc86ab03e1d4cbda8c5e47b5685afc0",
+      "status_code": 200,
+      "http_total_ms": 6.844898,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 3,
+      "request_id": "570597308f6c405f94d45b1aba740b08",
+      "status_code": 200,
+      "http_total_ms": 6.446799,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 4,
+      "request_id": "faf0af8890f9475aaf921c2b9984b27e",
+      "status_code": 200,
+      "http_total_ms": 7.014499,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 5,
+      "request_id": "24f8460f63d444b5a589c4186101992f",
+      "status_code": 200,
+      "http_total_ms": 5.940398,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 6,
+      "request_id": "b3206ac09c634fe89c13557c97e30299",
+      "status_code": 200,
+      "http_total_ms": 5.886099,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 7,
+      "request_id": "94f9cdea3dab403fa7407eca13024154",
+      "status_code": 200,
+      "http_total_ms": 5.648699,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 8,
+      "request_id": "383d3d0d3c9944f5ae14f9c02c8504d6",
+      "status_code": 200,
+      "http_total_ms": 5.932598,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 9,
+      "request_id": "04322cc500aa42bb86b6f0fdb4ec6769",
+      "status_code": 200,
+      "http_total_ms": 5.456799,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 10,
+      "request_id": "61c629ee01784358afaee99a81f8c37a",
+      "status_code": 200,
+      "http_total_ms": 5.918099,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 11,
+      "request_id": "70a756db984444db8ceb2c09ae734a7b",
+      "status_code": 200,
+      "http_total_ms": 6.700699,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 12,
+      "request_id": "9cd3bb4d485643ee8cc1e8dcffbe97b6",
+      "status_code": 200,
+      "http_total_ms": 4.649599,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 13,
+      "request_id": "13b5961699464bd180e3ea6e88b47fe3",
+      "status_code": 200,
+      "http_total_ms": 4.007599,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 14,
+      "request_id": "c4ca1db2e1c34efbab7a9425439b9897",
+      "status_code": 200,
+      "http_total_ms": 5.688098,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 15,
+      "request_id": "a9e412c787ba498f99c6ec391c74341f",
+      "status_code": 200,
+      "http_total_ms": 4.675199,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 16,
+      "request_id": "a29c2a16ea6541fda255253fe2c21a0f",
+      "status_code": 200,
+      "http_total_ms": 4.628399,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 17,
+      "request_id": "4c1e1f4bb3bf4cd09c790249f1e2f50f",
+      "status_code": 200,
+      "http_total_ms": 4.4156,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 18,
+      "request_id": "9a4526bcb24d43208ca3df89caa76e45",
+      "status_code": 200,
+      "http_total_ms": 4.711799,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 19,
+      "request_id": "503ba085d3664ebeaf50347237219cb5",
+      "status_code": 200,
+      "http_total_ms": 5.171398,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 20,
+      "request_id": "efdd1d77af35409e934b3bcacdec5221",
+      "status_code": 200,
+      "http_total_ms": 3.8509,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 21,
+      "request_id": "ab849f9a2ae54de8b029f02798c648e4",
+      "status_code": 200,
+      "http_total_ms": 4.386099,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 22,
+      "request_id": "401dee82a7d14ac79ce155fbb526f1ed",
+      "status_code": 200,
+      "http_total_ms": 4.924999,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 23,
+      "request_id": "e78ec4dff88f46038cfb51be5ce5b3f1",
+      "status_code": 200,
+      "http_total_ms": 5.139698,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 24,
+      "request_id": "d2821654a6214ec388cc38a4100cf8aa",
+      "status_code": 200,
+      "http_total_ms": 4.499299,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 25,
+      "request_id": "8869b5e449294f818ea62ab02a52bc4d",
+      "status_code": 200,
+      "http_total_ms": 4.521499,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 26,
+      "request_id": "779a5d9bfe13410f9deba2a1b1288b63",
+      "status_code": 200,
+      "http_total_ms": 5.189999,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 27,
+      "request_id": "11e3a9b6235e4697930b4ba6471a9c96",
+      "status_code": 200,
+      "http_total_ms": 4.744499,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 28,
+      "request_id": "2df537bf4e50483aad2b17fc821de357",
+      "status_code": 200,
+      "http_total_ms": 5.385699,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 29,
+      "request_id": "5fe3e346eac94a288061d2bfb55ce3bf",
+      "status_code": 200,
+      "http_total_ms": 4.671399,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "services",
+      "repeat": 30,
+      "request_id": "ec660bef06a44230b22a908ba3ec038f",
+      "status_code": 200,
+      "http_total_ms": 4.286799,
+      "response_bytes": 1702
+    },
+    {
+      "operation": "specialists",
+      "repeat": 1,
+      "request_id": "36a4bd764cf74d5997ca0bde4bc8ca57",
+      "status_code": 200,
+      "http_total_ms": 8.074698,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 2,
+      "request_id": "c4dc0777b1ce4354870d2e8fb366c781",
+      "status_code": 200,
+      "http_total_ms": 9.317198,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 3,
+      "request_id": "c10d4ebd1fd84fc4aff7200268a5a77b",
+      "status_code": 200,
+      "http_total_ms": 8.090298,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 4,
+      "request_id": "bd4df02de8584ac8a2f7316c96876d7e",
+      "status_code": 200,
+      "http_total_ms": 7.659698,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 5,
+      "request_id": "4e35ba35348c425f94b2f00d1d97b370",
+      "status_code": 200,
+      "http_total_ms": 7.392099,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 6,
+      "request_id": "3245938d72574dc1aeef89faf48a99d5",
+      "status_code": 200,
+      "http_total_ms": 7.742998,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 7,
+      "request_id": "c5e384621bf64e19b436f1a1f811cf2d",
+      "status_code": 200,
+      "http_total_ms": 7.741199,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 8,
+      "request_id": "dae1d7dd21c349c5b2305528baca7c42",
+      "status_code": 200,
+      "http_total_ms": 8.376598,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 9,
+      "request_id": "c0feecbd0ba14585ad2d65a875ec29da",
+      "status_code": 200,
+      "http_total_ms": 7.835098,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 10,
+      "request_id": "d13a02b6cd7f47df8cdbac0e1c31a19a",
+      "status_code": 200,
+      "http_total_ms": 7.866798,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 11,
+      "request_id": "2b20e3da80414288b60fde35b87ff062",
+      "status_code": 200,
+      "http_total_ms": 7.701599,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 12,
+      "request_id": "442dff5ee6c34bc586715d8667253e58",
+      "status_code": 200,
+      "http_total_ms": 7.865198,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 13,
+      "request_id": "623372e308244a17a74a64058f49d48f",
+      "status_code": 200,
+      "http_total_ms": 9.948798,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 14,
+      "request_id": "f383e0c4d0cd442490d002b44d49e32d",
+      "status_code": 200,
+      "http_total_ms": 9.284398,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 15,
+      "request_id": "af191f2909794c43abfc648319bb3f14",
+      "status_code": 200,
+      "http_total_ms": 8.594498,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 16,
+      "request_id": "7769bf7f98934cd5b86de939035cadb0",
+      "status_code": 200,
+      "http_total_ms": 8.422998,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 17,
+      "request_id": "576f63170c2042c2bdd2863245b06fee",
+      "status_code": 200,
+      "http_total_ms": 8.125498,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 18,
+      "request_id": "18f65cd80e114606ae2c9e8d294062e7",
+      "status_code": 200,
+      "http_total_ms": 8.501599,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 19,
+      "request_id": "732b193caeff4f9388e82f90bf6b5085",
+      "status_code": 200,
+      "http_total_ms": 6.617298,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 20,
+      "request_id": "3500505857744dc98f4dba31661e2ed7",
+      "status_code": 200,
+      "http_total_ms": 7.071999,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 21,
+      "request_id": "e2695868d9bb4dc793c4f4a439301e3c",
+      "status_code": 200,
+      "http_total_ms": 7.841298,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 22,
+      "request_id": "0de1e9f211fb425cb07947e4f11a5a1d",
+      "status_code": 200,
+      "http_total_ms": 6.898098,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 23,
+      "request_id": "b80b505451144b90b8c7b18c73cd81e9",
+      "status_code": 200,
+      "http_total_ms": 8.960499,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 24,
+      "request_id": "e9b3f402e8994f0097fc7ad9341ab976",
+      "status_code": 200,
+      "http_total_ms": 9.214898,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 25,
+      "request_id": "bdf25390c5e849a797d0e092aaf391d4",
+      "status_code": 200,
+      "http_total_ms": 7.952798,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 26,
+      "request_id": "6c8e8b30e63f434298e308e304d85752",
+      "status_code": 200,
+      "http_total_ms": 7.930298,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 27,
+      "request_id": "971eb7cf5bbb46919c85007930de0ab7",
+      "status_code": 200,
+      "http_total_ms": 7.760398,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 28,
+      "request_id": "c326f554dadc40b990eac70b600c638c",
+      "status_code": 200,
+      "http_total_ms": 7.564999,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 29,
+      "request_id": "336eb6a998464a7897558cedf2629184",
+      "status_code": 200,
+      "http_total_ms": 8.357898,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "specialists",
+      "repeat": 30,
+      "request_id": "2950813fd480462f9c138820c5b90ec0",
+      "status_code": 200,
+      "http_total_ms": 7.581098,
+      "response_bytes": 19549
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 1,
+      "request_id": "75acbc690ea94d8e8f208d1f96752216",
+      "status_code": 200,
+      "http_total_ms": 524.489029,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 2,
+      "request_id": "3546aaf97a1a4889b260e82f451f725c",
+      "status_code": 200,
+      "http_total_ms": 398.909227,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 3,
+      "request_id": "0a9cc0b8a35541f785337a66e7ce7c71",
+      "status_code": 200,
+      "http_total_ms": 502.696934,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 4,
+      "request_id": "5a5eb3b0293b45f4aa44813a5b5ddc1d",
+      "status_code": 200,
+      "http_total_ms": 442.63033,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 5,
+      "request_id": "8ea90bb73c514fbc854ae56c2ddd568b",
+      "status_code": 200,
+      "http_total_ms": 407.776827,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 6,
+      "request_id": "7faef2fc3b9f4ff195df2e0d3138dfe4",
+      "status_code": 200,
+      "http_total_ms": 398.998727,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 7,
+      "request_id": "a71b52350bf0472695789b4160f363ad",
+      "status_code": 200,
+      "http_total_ms": 354.769524,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 8,
+      "request_id": "fae033291ee24eb38f0b6bd56b0ee2b8",
+      "status_code": 200,
+      "http_total_ms": 394.563527,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 9,
+      "request_id": "429910f5fc9e4e11a2ea29e1e79f6c4b",
+      "status_code": 200,
+      "http_total_ms": 419.468928,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 10,
+      "request_id": "539e30159d8f44f2bf32f8894c729a61",
+      "status_code": 200,
+      "http_total_ms": 418.967228,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 11,
+      "request_id": "4e2e5b67332a4c75a4ae4ce46864d736",
+      "status_code": 200,
+      "http_total_ms": 432.334229,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 12,
+      "request_id": "a4a696f97c56452fbd7d9199a4938ab7",
+      "status_code": 200,
+      "http_total_ms": 339.977123,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 13,
+      "request_id": "2d2d75d3430b43ff85503b68899fbff8",
+      "status_code": 200,
+      "http_total_ms": 368.175325,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 14,
+      "request_id": "38d3851dfc0e4a3da005c96f1e850040",
+      "status_code": 200,
+      "http_total_ms": 402.427727,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 15,
+      "request_id": "9b8aa645c75a4c0faf423ed689ae83a8",
+      "status_code": 200,
+      "http_total_ms": 418.363428,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 16,
+      "request_id": "b35a48d39a1d408f9493e04c25fb86f3",
+      "status_code": 200,
+      "http_total_ms": 432.635029,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 17,
+      "request_id": "022a702e194741439359a5018cecc052",
+      "status_code": 200,
+      "http_total_ms": 374.282225,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 18,
+      "request_id": "39b9de74242f4198b4ff47e314219dfc",
+      "status_code": 200,
+      "http_total_ms": 439.96053,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 19,
+      "request_id": "10b45b939bcd49d6bb35bdeaf6492cd9",
+      "status_code": 200,
+      "http_total_ms": 436.951829,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 20,
+      "request_id": "6700dc6444b44feaba12738e2f5dafcb",
+      "status_code": 200,
+      "http_total_ms": 341.152523,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 21,
+      "request_id": "8bf5a07d69f1439d9cfa199d8f4e130a",
+      "status_code": 200,
+      "http_total_ms": 356.1654,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 22,
+      "request_id": "488232fc99d44bc0b1bd3b0b0fecaa30",
+      "status_code": 200,
+      "http_total_ms": 321.053734,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 23,
+      "request_id": "9f1e92729f4345f3853e7458a8fc6fb7",
+      "status_code": 200,
+      "http_total_ms": 397.979265,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 24,
+      "request_id": "aeec1b04a4644c19974b6c0e5a39fc8b",
+      "status_code": 200,
+      "http_total_ms": 335.720739,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 25,
+      "request_id": "e220550ecb7f464690f0f0cecb251584",
+      "status_code": 200,
+      "http_total_ms": 370.143554,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 26,
+      "request_id": "f67a82b8585a4660b1718bd78ffea3ef",
+      "status_code": 200,
+      "http_total_ms": 323.044734,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 27,
+      "request_id": "2a1335ac161448319d4ea1888157aef3",
+      "status_code": 200,
+      "http_total_ms": 380.937059,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 28,
+      "request_id": "4938f941f89a4870b45338ebaba23071",
+      "status_code": 200,
+      "http_total_ms": 341.245542,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 29,
+      "request_id": "46f88842d88946f1b26dc33227d81e33",
+      "status_code": 200,
+      "http_total_ms": 416.002672,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "free_slots",
+      "repeat": 30,
+      "request_id": "dc3a7980fb1e45b291f50979ca1fc329",
+      "status_code": 200,
+      "http_total_ms": 389.589262,
+      "response_bytes": 4392
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 1,
+      "request_id": "b149575dd473409fb0043607d34e53cf",
+      "status_code": 200,
+      "http_total_ms": 150.975262,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 2,
+      "request_id": "1c72539cb66a400aab1b653796e1ffb1",
+      "status_code": 200,
+      "http_total_ms": 164.637069,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 3,
+      "request_id": "e49b59575c7343c1a79781f574354893",
+      "status_code": 200,
+      "http_total_ms": 218.06289,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 4,
+      "request_id": "d6126099d42c4c35b0d0071333ea1b18",
+      "status_code": 200,
+      "http_total_ms": 209.232786,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 5,
+      "request_id": "64638d9f31244c738f829ee7de944f74",
+      "status_code": 200,
+      "http_total_ms": 202.295285,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 6,
+      "request_id": "faad0977ef2c47bca25cd2185501357a",
+      "status_code": 200,
+      "http_total_ms": 207.581686,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 7,
+      "request_id": "1ebb9043380049479f08d1f14f48fbe2",
+      "status_code": 200,
+      "http_total_ms": 217.92209,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 8,
+      "request_id": "d777711454cf422d8679053f3b9ae89a",
+      "status_code": 200,
+      "http_total_ms": 202.119584,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 9,
+      "request_id": "f9ba69ada10c43ac9c3d50c04a04bd88",
+      "status_code": 200,
+      "http_total_ms": 166.316569,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 10,
+      "request_id": "e8ec9e10f17642ccaac235701f787545",
+      "status_code": 200,
+      "http_total_ms": 193.674581,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 11,
+      "request_id": "d4975eb66d3941e8a8ae866f9ffaf30c",
+      "status_code": 200,
+      "http_total_ms": 185.477077,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 12,
+      "request_id": "90e36c07be0b4dfb8fa07d2e3ff0d911",
+      "status_code": 200,
+      "http_total_ms": 153.722664,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 13,
+      "request_id": "a985435c5aa74f38bd9af929578c4a49",
+      "status_code": 200,
+      "http_total_ms": 215.216689,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 14,
+      "request_id": "7786fd7a11304226855ce032e0c525bd",
+      "status_code": 200,
+      "http_total_ms": 196.649982,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 15,
+      "request_id": "9306f0ce0f4148cbbe0f439d6b950df9",
+      "status_code": 200,
+      "http_total_ms": 217.25029,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 16,
+      "request_id": "d9dac2e3443845bfb3633b9c2e2b13be",
+      "status_code": 200,
+      "http_total_ms": 275.193415,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 17,
+      "request_id": "c1eaf596eba347579e2a5a6e42cdd881",
+      "status_code": 200,
+      "http_total_ms": 305.455627,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 18,
+      "request_id": "b16d4e81c786480dab794cefe2b1e38f",
+      "status_code": 200,
+      "http_total_ms": 201.412442,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 19,
+      "request_id": "34b101e45865419295dc40bcd1b8b8fc",
+      "status_code": 200,
+      "http_total_ms": 230.89534,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 20,
+      "request_id": "4d34cb350b794c11be661345184e038e",
+      "status_code": 200,
+      "http_total_ms": 262.333845,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 21,
+      "request_id": "dd53307620fc402db7f86e7fab494d1a",
+      "status_code": 200,
+      "http_total_ms": 200.942134,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 22,
+      "request_id": "19cc46df25f74b7ebe72227f2118ef61",
+      "status_code": 200,
+      "http_total_ms": 276.343147,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 23,
+      "request_id": "034d0b6e4b134c4da85d9be41b407695",
+      "status_code": 200,
+      "http_total_ms": 172.04973,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 24,
+      "request_id": "b549af77373740c6a47b0745f25b9081",
+      "status_code": 200,
+      "http_total_ms": 162.310728,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 25,
+      "request_id": "fba990839d0341e8a0f13d11b17aacde",
+      "status_code": 200,
+      "http_total_ms": 150.726825,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 26,
+      "request_id": "e66f62b6b6de46bd8c67948e546874a2",
+      "status_code": 200,
+      "http_total_ms": 178.363831,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 27,
+      "request_id": "d2aa356ea07a4785bd70b4ed91bebdb8",
+      "status_code": 200,
+      "http_total_ms": 200.633034,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 28,
+      "request_id": "c3702077e4f044cb9d01a00a65b195f5",
+      "status_code": 200,
+      "http_total_ms": 203.269035,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 29,
+      "request_id": "345576196f8242d0ba555ea2d764b605",
+      "status_code": 200,
+      "http_total_ms": 222.031538,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointments_list",
+      "repeat": 30,
+      "request_id": "3360dd45b55442a9b48242a3084f2829",
+      "status_code": 200,
+      "http_total_ms": 312.163254,
+      "response_bytes": 10812
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 1,
+      "request_id": "d39768c6a18747f88c43ed0613e016b5",
+      "status_code": 200,
+      "http_total_ms": 7.121401,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 2,
+      "request_id": "c7a91ec30899425a98b32487b720781f",
+      "status_code": 200,
+      "http_total_ms": 7.923102,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 3,
+      "request_id": "ab4a7a9058f749a09daeef439d277a1c",
+      "status_code": 200,
+      "http_total_ms": 8.762401,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 4,
+      "request_id": "a18e51cd18514087b6f6e803deff6010",
+      "status_code": 200,
+      "http_total_ms": 6.670401,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 5,
+      "request_id": "7f97a812d1d441d380d18f19d054a6c5",
+      "status_code": 200,
+      "http_total_ms": 7.101401,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 6,
+      "request_id": "c08b765436804307946a27b7815fe78d",
+      "status_code": 200,
+      "http_total_ms": 7.550602,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 7,
+      "request_id": "d63aba832c5440db8e19cc77bec89db9",
+      "status_code": 200,
+      "http_total_ms": 8.573801,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 8,
+      "request_id": "6b36fb217617487781b505acd04aad52",
+      "status_code": 200,
+      "http_total_ms": 8.525702,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 9,
+      "request_id": "e3c46710e93446ceb1f6d9f62cd515fd",
+      "status_code": 200,
+      "http_total_ms": 8.901801,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 10,
+      "request_id": "f9b417eb49a34d5e80b8ef25bff35b00",
+      "status_code": 200,
+      "http_total_ms": 9.093702,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 11,
+      "request_id": "f95ab04cab0b45218ee8fda566c7aa51",
+      "status_code": 200,
+      "http_total_ms": 11.219502,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 12,
+      "request_id": "2b232045b1d74d6a8e80090c87f94def",
+      "status_code": 200,
+      "http_total_ms": 7.889701,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 13,
+      "request_id": "1ba95b79b551401ba2376d9e90856788",
+      "status_code": 200,
+      "http_total_ms": 14.587203,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 14,
+      "request_id": "59f3991be1cb434ebda6767ce1e2584a",
+      "status_code": 200,
+      "http_total_ms": 12.727702,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 15,
+      "request_id": "96defe480ef14935b11d2c15dc0fdd75",
+      "status_code": 200,
+      "http_total_ms": 13.725302,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 16,
+      "request_id": "f75c923eee01419b8e69646387ecc074",
+      "status_code": 200,
+      "http_total_ms": 12.484202,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 17,
+      "request_id": "7bf703722aa145c8974203575e998d1e",
+      "status_code": 200,
+      "http_total_ms": 10.676002,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 18,
+      "request_id": "fbe4ebe3791e485c90d55d0326f266db",
+      "status_code": 200,
+      "http_total_ms": 11.537602,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 19,
+      "request_id": "55f6a2c214f44170abcefa41ac507651",
+      "status_code": 200,
+      "http_total_ms": 12.868802,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 20,
+      "request_id": "52def867938340c1b10e7947e2b3d711",
+      "status_code": 200,
+      "http_total_ms": 13.306403,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 21,
+      "request_id": "51d8d5c070b74d4d8cf7bcbc7ee8a498",
+      "status_code": 200,
+      "http_total_ms": 8.496701,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 22,
+      "request_id": "60dbe7e90c8f456f9da18c2bb663cf62",
+      "status_code": 200,
+      "http_total_ms": 7.661301,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 23,
+      "request_id": "797b36b7e1254b00a2ca8e950de0f621",
+      "status_code": 200,
+      "http_total_ms": 9.407302,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 24,
+      "request_id": "6f78b37f8df945fa9d50c0ba1d4b22e2",
+      "status_code": 200,
+      "http_total_ms": 7.443201,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 25,
+      "request_id": "d9a6d709635948ab9138ad7e1457a189",
+      "status_code": 200,
+      "http_total_ms": 9.757902,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 26,
+      "request_id": "602265b4354345bbb5406063969451ae",
+      "status_code": 200,
+      "http_total_ms": 6.069301,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 27,
+      "request_id": "46c812aa30c84f04a7ca1b2a10d28df3",
+      "status_code": 200,
+      "http_total_ms": 8.125201,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 28,
+      "request_id": "3d0579ddaf9444deaff8482ee3c92f37",
+      "status_code": 200,
+      "http_total_ms": 5.334201,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 29,
+      "request_id": "6a75fc280aef454aafc332b6c8d2cb18",
+      "status_code": 200,
+      "http_total_ms": 9.250602,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_detail",
+      "repeat": 30,
+      "request_id": "ff3b0a82d9734f1284678936b6c0a4dd",
+      "status_code": 200,
+      "http_total_ms": 5.440101,
+      "response_bytes": 521
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 1,
+      "request_id": "b73df7f2630148048c8c87cd203e9cb1",
+      "status_code": 201,
+      "http_total_ms": 45.750208,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 2,
+      "request_id": "e500af3f299b41718f4c3ef233139f85",
+      "status_code": 201,
+      "http_total_ms": 40.633807,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 3,
+      "request_id": "55c04ac9f7fb43798077c8ece32aaf14",
+      "status_code": 201,
+      "http_total_ms": 47.664908,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 4,
+      "request_id": "a2e683d82019456ca8ca30201bf11e50",
+      "status_code": 201,
+      "http_total_ms": 83.063814,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 5,
+      "request_id": "f7e38a8cd9f147d9950d6c2308d2cf9f",
+      "status_code": 201,
+      "http_total_ms": 50.866409,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 6,
+      "request_id": "a30d56afa03f4b4cacfb6f74ecb7cf42",
+      "status_code": 201,
+      "http_total_ms": 43.714007,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 7,
+      "request_id": "8b0ef314d5a64b93ba10394311c043c5",
+      "status_code": 201,
+      "http_total_ms": 35.466106,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 8,
+      "request_id": "d9014fdfc94644b88f88d06ce1656c7c",
+      "status_code": 201,
+      "http_total_ms": 38.765906,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 9,
+      "request_id": "6adeebbbac9646d2bb3a2173da72a7cd",
+      "status_code": 201,
+      "http_total_ms": 40.981707,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 10,
+      "request_id": "4c53fd9725484d32af8cf727cb27be3d",
+      "status_code": 201,
+      "http_total_ms": 58.60081,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 11,
+      "request_id": "ce6648b1e5004f80b5434086894ba8da",
+      "status_code": 201,
+      "http_total_ms": 31.254005,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 12,
+      "request_id": "d45bc62d0ab048f3bf2ace3b50ed2061",
+      "status_code": 201,
+      "http_total_ms": 31.652605,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 13,
+      "request_id": "ebf39acb4464472c99681ffb39948107",
+      "status_code": 201,
+      "http_total_ms": 32.747406,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 14,
+      "request_id": "4df28a6e34f94764812af505dace0ea7",
+      "status_code": 201,
+      "http_total_ms": 32.937106,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 15,
+      "request_id": "10ef4cc8de55490ab6ffe0b3dbfc55ff",
+      "status_code": 201,
+      "http_total_ms": 34.929506,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 16,
+      "request_id": "192fd90ed6844457b839e5d24c4feb34",
+      "status_code": 201,
+      "http_total_ms": 52.511809,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 17,
+      "request_id": "6e5ad6c8c0234936a6154480a985d12f",
+      "status_code": 201,
+      "http_total_ms": 42.124108,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 18,
+      "request_id": "44f6e137acf242ae937a65573ee88705",
+      "status_code": 201,
+      "http_total_ms": 35.163906,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 19,
+      "request_id": "97e9c8d0f1944f12951b41d17d58ed6d",
+      "status_code": 201,
+      "http_total_ms": 45.740307,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 20,
+      "request_id": "1c035a8564494596a4f663d713647e89",
+      "status_code": 201,
+      "http_total_ms": 33.374005,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 21,
+      "request_id": "be99a779ce904728a356d9ec110514a5",
+      "status_code": 201,
+      "http_total_ms": 41.855207,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 22,
+      "request_id": "14361e0d0111465e8275bbf09cf262d0",
+      "status_code": 201,
+      "http_total_ms": 39.549707,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 23,
+      "request_id": "10159ac50ec9456896bc915bfee20fe7",
+      "status_code": 201,
+      "http_total_ms": 33.161206,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 24,
+      "request_id": "8a66b5d7ad6a42a7b2660ac5e44f4ef7",
+      "status_code": 201,
+      "http_total_ms": 34.011706,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 25,
+      "request_id": "ec12faaa049f4d55a4a3ce1cec1bbf6d",
+      "status_code": 201,
+      "http_total_ms": 40.572006,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 26,
+      "request_id": "144fae58525b47feb473d83dcceb62b6",
+      "status_code": 201,
+      "http_total_ms": 29.614605,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 27,
+      "request_id": "618adf488b174fa6b50107d878bda665",
+      "status_code": 201,
+      "http_total_ms": 35.487406,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 28,
+      "request_id": "bcac39613aed4bfe9847480d28fa2c9b",
+      "status_code": 201,
+      "http_total_ms": 34.675706,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 29,
+      "request_id": "90076f3f17b64e64987b6858b0be479b",
+      "status_code": 201,
+      "http_total_ms": 40.357807,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_create",
+      "repeat": 30,
+      "request_id": "4ddc5a3143b54652bacbf77ecbb0871b",
+      "status_code": 201,
+      "http_total_ms": 44.103408,
+      "response_bytes": 561
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 1,
+      "request_id": "3265033fea3e413797d5864d3a63b188",
+      "status_code": 200,
+      "http_total_ms": 18.712803,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 2,
+      "request_id": "56bbb9e4c7c6443aab2d6a04d770d45c",
+      "status_code": 200,
+      "http_total_ms": 16.874702,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 3,
+      "request_id": "9e6cf0f31c794b5ebd3c6d50db50b7d3",
+      "status_code": 200,
+      "http_total_ms": 15.604403,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 4,
+      "request_id": "63cf359a317f41bcbce0fd6c364f0e63",
+      "status_code": 200,
+      "http_total_ms": 19.365404,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 5,
+      "request_id": "6a3827a352f64263bb70d5f71c1ae725",
+      "status_code": 200,
+      "http_total_ms": 16.219103,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 6,
+      "request_id": "22347ef4979c419ba4fe7955cbd5b07e",
+      "status_code": 200,
+      "http_total_ms": 16.622902,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 7,
+      "request_id": "9ec3861ba499426c840b0d15d6690f2f",
+      "status_code": 200,
+      "http_total_ms": 18.488703,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 8,
+      "request_id": "d830816f3a4140d9921aaa703fbe3b77",
+      "status_code": 200,
+      "http_total_ms": 19.231404,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 9,
+      "request_id": "b0d08b491268470c835989359749d7b2",
+      "status_code": 200,
+      "http_total_ms": 24.384304,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 10,
+      "request_id": "0967af9e20fa4150bc28e2637fc71542",
+      "status_code": 200,
+      "http_total_ms": 15.081003,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 11,
+      "request_id": "e0a071b734514bd9b4b75381349962d2",
+      "status_code": 200,
+      "http_total_ms": 15.326002,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 12,
+      "request_id": "ea78ab32e9a44bce916878fca748ee34",
+      "status_code": 200,
+      "http_total_ms": 15.708102,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 13,
+      "request_id": "8afd5b2b93c949fcac04f013576e2831",
+      "status_code": 200,
+      "http_total_ms": 18.150603,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 14,
+      "request_id": "ab92d3edaf1e45b9bb9e24c32411d6d6",
+      "status_code": 200,
+      "http_total_ms": 18.741603,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 15,
+      "request_id": "cf344a5769cc43bb84ec5d7ffff7ad67",
+      "status_code": 200,
+      "http_total_ms": 14.359703,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 16,
+      "request_id": "2c05e62d990643c296be9b6e677f4820",
+      "status_code": 200,
+      "http_total_ms": 16.224502,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 17,
+      "request_id": "5f7e2124b4814eb0a257d99a394514dc",
+      "status_code": 200,
+      "http_total_ms": 16.111703,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 18,
+      "request_id": "d878f29e3db542d6ba3a775d6ab44fb7",
+      "status_code": 200,
+      "http_total_ms": 14.559203,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 19,
+      "request_id": "8f469fc7a8c046438856e27980a801a2",
+      "status_code": 200,
+      "http_total_ms": 14.987303,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 20,
+      "request_id": "83790660c52741ae889362b78ce9ad4f",
+      "status_code": 200,
+      "http_total_ms": 17.727503,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 21,
+      "request_id": "5e6b2c219e2f4b7ba48ea9d22b4dec0e",
+      "status_code": 200,
+      "http_total_ms": 20.058204,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 22,
+      "request_id": "06d7b18ecf9d49f5969553a293c3bbb0",
+      "status_code": 200,
+      "http_total_ms": 24.834304,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 23,
+      "request_id": "eb6eb53c3ef54277a80583cf18db3e2e",
+      "status_code": 200,
+      "http_total_ms": 20.593303,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 24,
+      "request_id": "a22c380bc7674b0480d214c9aa401549",
+      "status_code": 200,
+      "http_total_ms": 12.717202,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 25,
+      "request_id": "7810d78e3f194636af286be4436a66bf",
+      "status_code": 200,
+      "http_total_ms": 15.612002,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 26,
+      "request_id": "8d1b71b0f5f24b9aa903eaedabcdcdf6",
+      "status_code": 200,
+      "http_total_ms": 20.798804,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 27,
+      "request_id": "4f6358e96cb14ee9818c69b4d05aab9b",
+      "status_code": 200,
+      "http_total_ms": 19.942003,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 28,
+      "request_id": "716e0c09c1dc404c84beeb36df8331a2",
+      "status_code": 200,
+      "http_total_ms": 21.141403,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 29,
+      "request_id": "e032fde656e7445ca76c658f2ee7b57d",
+      "status_code": 200,
+      "http_total_ms": 22.826504,
+      "response_bytes": 554
+    },
+    {
+      "operation": "appointment_cancel",
+      "repeat": 30,
+      "request_id": "8c857510b6704544911d616095dce7ec",
+      "status_code": 200,
+      "http_total_ms": 19.613603,
+      "response_bytes": 554
+    },
+    {
+      "operation": "summary",
+      "repeat": 1,
+      "request_id": "8ee3a73239c1424ea1e42af704f1257f",
+      "status_code": 200,
+      "http_total_ms": 3285.990696,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 2,
+      "request_id": "670a1d0095594d07bfaee808b1d662a1",
+      "status_code": 200,
+      "http_total_ms": 2581.133644,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 3,
+      "request_id": "ed274602dc064af0bf7c9d94b7df803b",
+      "status_code": 200,
+      "http_total_ms": 2299.164918,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 4,
+      "request_id": "6c6bef5b83c147dd93e68d3422dc6b1a",
+      "status_code": 200,
+      "http_total_ms": 2238.441515,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 5,
+      "request_id": "6ef2e443f6f74fadb4fe2f995b802084",
+      "status_code": 200,
+      "http_total_ms": 1930.015699,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 6,
+      "request_id": "f6a471fb8ade4f21b60b18f180edd202",
+      "status_code": 200,
+      "http_total_ms": 1862.250002,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 7,
+      "request_id": "70f6dddda3634c888a006f6c3300b5ab",
+      "status_code": 200,
+      "http_total_ms": 1874.016704,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 8,
+      "request_id": "73262bf7db8f4f64af5fe17c3442aaa8",
+      "status_code": 200,
+      "http_total_ms": 2350.712731,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 9,
+      "request_id": "3d2e7279887643ee8c3dfed6d9eb6d1b",
+      "status_code": 200,
+      "http_total_ms": 2333.871232,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 10,
+      "request_id": "e6b9c5d9da084c0a95751c55ff34b0a9",
+      "status_code": 200,
+      "http_total_ms": 2247.209267,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 11,
+      "request_id": "a6dc9fa6783c4fdfbb84dd47c2f418a6",
+      "status_code": 200,
+      "http_total_ms": 2298.44017,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 12,
+      "request_id": "9a2dc889dcd747fd9927b14ef6891344",
+      "status_code": 200,
+      "http_total_ms": 2305.857971,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 13,
+      "request_id": "eca20f98a1d340d6a8b0a053421c1183",
+      "status_code": 200,
+      "http_total_ms": 2163.65214,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 14,
+      "request_id": "bdf001fb97f045aaae307ee6d0c7c3c5",
+      "status_code": 200,
+      "http_total_ms": 2274.941725,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 15,
+      "request_id": "c895a5836abc40a7b2d421561a56a493",
+      "status_code": 200,
+      "http_total_ms": 2471.350437,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 16,
+      "request_id": "9e285b146d3c4f3d8f9ba1deb1c33ad6",
+      "status_code": 200,
+      "http_total_ms": 3243.887359,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 17,
+      "request_id": "a8f472463e624eeda41e20a5a9717718",
+      "status_code": 200,
+      "http_total_ms": 3354.482722,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 18,
+      "request_id": "e909fe955a554a39ad9e279ebd2dc18b",
+      "status_code": 200,
+      "http_total_ms": 2917.157407,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 19,
+      "request_id": "dc61dee32bf1454395bdd09064cc35d8",
+      "status_code": 200,
+      "http_total_ms": 2731.415301,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 20,
+      "request_id": "d4d45f544133495cbf86fc9bfa01de01",
+      "status_code": 200,
+      "http_total_ms": 2844.780205,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 21,
+      "request_id": "553dadb1ddaf475f890de64ea565186e",
+      "status_code": 200,
+      "http_total_ms": 3502.872617,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 22,
+      "request_id": "699b8d5303c043ef90f388c1cf9eb9ed",
+      "status_code": 200,
+      "http_total_ms": 2499.006121,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 23,
+      "request_id": "01b598727036428e84835b0699724623",
+      "status_code": 200,
+      "http_total_ms": 2417.42502,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 24,
+      "request_id": "ba0270ea95734cf1a0bb55ba73821f40",
+      "status_code": 200,
+      "http_total_ms": 2456.41232,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 25,
+      "request_id": "110d8a6cd03a4b42ab1a65f4b2484efa",
+      "status_code": 200,
+      "http_total_ms": 2330.829,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 26,
+      "request_id": "53ae2085bfe04ea0b5907e3727012a04",
+      "status_code": 200,
+      "http_total_ms": 2570.766077,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 27,
+      "request_id": "76c5bf64930b4b2bbbe927cbd9971510",
+      "status_code": 200,
+      "http_total_ms": 2428.325183,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 28,
+      "request_id": "df1b14049d5a40b6b5ecb0bdb4769d36",
+      "status_code": 200,
+      "http_total_ms": 2608.778074,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 29,
+      "request_id": "2a358582bea24b6fa7a3dd3a31ef6829",
+      "status_code": 200,
+      "http_total_ms": 2401.901983,
+      "response_bytes": 27021
+    },
+    {
+      "operation": "summary",
+      "repeat": 30,
+      "request_id": "8d9d8af493a5402f9f9d4cc2b72705b4",
+      "status_code": 200,
+      "http_total_ms": 2350.066087,
+      "response_bytes": 27021
+    }
+  ],
+  "status": "complete",
+  "data_counts_after": {
+    "services": 30,
+    "specialists": 200,
+    "users": 1,
+    "slots": 200000,
+    "appointments": 100000
+  },
+  "data_fingerprint_after": "06eb169eacca8fdac92f69337c43e955e16d9429688c4e31198c0f48a5cee50e",
+  "data_unchanged": true,
+  "finished_at_utc": "2026-10-07T17:41:39.456706+00:00"
+}

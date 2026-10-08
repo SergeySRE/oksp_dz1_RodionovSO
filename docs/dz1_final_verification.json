@@ -1,0 +1,407 @@
+{
+  "started_at": "2026-10-08T10:08:14.844049+00:00",
+  "working_before": {
+    "counts": {
+      "services": 30,
+      "specialists": 200,
+      "users": 1,
+      "slots": 200000,
+      "appointments": 100001
+    },
+    "fingerprint": "a346f5f92b915a30db2018940bc155f10efe925d0c0098488c18448baa687b67",
+    "demo_record": {
+      "id": 100001,
+      "slot_id": 49006,
+      "created_by_id": 1,
+      "client_name": "Родионов Сергей Олегович",
+      "client_contact": "demo@example.com",
+      "status": "cancelled",
+      "created_at": "2026-10-08 06:13:14.715850+00:00",
+      "cancelled_at": "2026-10-08 06:16:28.428096+00:00"
+    },
+    "sequences": {
+      "services": {
+        "last_value": 30,
+        "is_called": true
+      },
+      "specialists": {
+        "last_value": 200,
+        "is_called": true
+      },
+      "users": {
+        "last_value": 1,
+        "is_called": true
+      },
+      "slots": {
+        "last_value": 200000,
+        "is_called": true
+      },
+      "appointments": {
+        "last_value": 100001,
+        "is_called": true
+      }
+    },
+    "test_schemas": []
+  },
+  "protected_before": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/api.py": "687f0109ee2b7ae74d88a0512ab349d11ce1f25d9f5c6a4dbf56757bdc918c2a",
+    "app/auth.py": "5b7e23980886391472feaaa18991fb6893467d5bdd674d60727b9fb16d484f06",
+    "app/cli.py": "4bc3ba107760b66bc7a55fa318007dcb1bcc6ea9be11beb8e3a30e8012cd397a",
+    "app/config.py": "3bff5901fad953e28e81ce013a2eeec33143d6cfe32e5678c40a598c979c3c45",
+    "app/db.py": "0478a289adc79436b7fd143faf3aa3ae291e8d9ba6eca0ba0d34d71a9f1b1301",
+    "app/main.py": "139eb9d595188ac47fbfcf33626a473ee458cb7b40a4e1c82c5ea70b281b66f0",
+    "app/measurement.py": "caada60071a42c27eb82920f6df8dc16edf192a37dead1bc8e423e345bda595d",
+    "app/models.py": "55db997a9d1741fe54ad716b5353d174c13e7b033071e0819cbbe5418df92892",
+    "app/observation.py": "213caaf2e309a660b491614f6f9b56451efa89277bb2153567d8e12b6e782f74",
+    "app/pages.py": "4fe1f1503b366fb8d81fdec887578ce86168d111803cca5754c8fc5b78301364",
+    "app/schemas.py": "a0502f213db0ed37d4a8f5b858b30435a99e2932ec7ad6cf47e0eb683262f1cb",
+    "app/seed.py": "a27e8148caf50222c338687801b57aa6bb49fce14536e02e41f8165d20bacd8d",
+    "app/services.py": "7d797735051a97d8197e1f99ebcb3e63bd288e6333aa93ca2e3487b41bc8c2a3",
+    "app/static/app.js": "950faa433bce64215d04a9becf2c3b8661de3349033b094b2a10b9f0e31d89c7",
+    "app/static/style.css": "b4a521df5ce5f009801b3cb0905f0c9a8f4218e1edbb018c3269dab8e2e60cef",
+    "app/templates/appointment.html": "8fa649d783855fe17be3d82b2b1a9b752b0a48e8036416dd40900d607603c068",
+    "app/templates/appointments.html": "6eef3117c0108b6b2917681510b07a91bdc46b10dccfe8f8e9b0b9ae58bbf4c0",
+    "app/templates/base.html": "727ea2c4cdb1e320afaccebcec74dd9cf299531c60ec245fc68e852fba5038b8",
+    "app/templates/booking.html": "3227ade3395380cfe59e7471047d7ce0ccac6dc63d2b8c5823748a8a53b3910e",
+    "app/templates/login.html": "239b3765de1692c615f68e90b069428ec1c12a9e4c897afdb494a9dd45a13ea2",
+    "app/templates/pagination.html": "431aa77b5d2d8ff44cd1d80c5bd7b840a7e740747e8c904b1f2e4171159059af",
+    "app/templates/summary.html": "7a4f0c0d77e6b6ab20d34ade1fbc1aa70e84ec06d3cb25f2ab3ab33ec3252006",
+    "tests/conftest.py": "2e6ba2c3865e728ca6b5233c7930a8e348e4ce0ea37d634ef8bd44ceef16220e",
+    "tests/test_api.py": "feb3a8b96b7c8c0ecc5ab0e375a2630db32331c72d2bec4642021baebc5d93fb",
+    "tests/test_measurement.py": "a3745bd0522401a3abdf228f1fd9990f174ca782abec3add2ecd576cbd4df1b0",
+    "tests/test_rules.py": "13bbfecf86788412aacd5f722ee89a3d025fc2a94a432f3bad4e95859236b9d0",
+    "measurements/business_logic.sha256.json": "001a4328222e6fbb191a37299d69bf54a6549ab8785e53b5328818e6798b7a51",
+    "measurements/comparison.csv": "65936285d9a52f012e130a41405890408ff14ff790f83d97e98bcbf5479f9167",
+    "measurements/comparison.json": "07d7d3e557304f6d615abf77665fede2c54478db5073f8d93b373772dc3d0729",
+    "measurements/small_baseline.json": "85dd970573d24e13ef54ca06d98fb643cacd2fed22abd4313a64b17e21e70cf9",
+    "measurements/small_baseline_raw.csv": "d9f681ea8636bea871a3462f9c2de78e77ce0339c2465ce33af61bbe5c3f9deb",
+    "measurements/small_baseline_summary.csv": "f619f226e312a589af9cd518ae43fcca0225f281b046f5608a4212ba50aee7c4",
+    "measurements/small_diagnostic.json": "5828357eb978facd72497d9dc939f4c180b868eb3da3e68ac14ff6ed07981464",
+    "measurements/small_diagnostic_raw.csv": "39cc8f6c2470cb03fed5135444bb014de56e8f1ee0713d0fa01515080424a7ef",
+    "measurements/small_diagnostic_summary.csv": "3b7abdbab66af5caa8f5ee7a06dcb736a4ee5254350f26fa9be852277c226608",
+    "measurements/verification.json": "131f2ee592752a2e336897b7b41dd90c69e392dcb6ea7232d955eca4fc45e22a",
+    "measurements/working_baseline.json": "c9296099b6775c86bb283211d0c31ed9f90597f2ee1fa4530fb010f0b4f13b6c",
+    "measurements/working_baseline_raw.csv": "51fac288bd94fc1ba38d1a8ed0a78310d4509ace6f762f022dc0acafc7917cf4",
+    "measurements/working_baseline_summary.csv": "9c2e8a22534995c1c0d70c700d905d61d476ee5b218aa8bae2954edb3cb21547",
+    "measurements/working_diagnostic.json": "cad3b275461dfc46d7b1ad681f03c02e955d8addb3278f90ed59255af8c10d50",
+    "measurements/working_diagnostic_raw.csv": "f28394197660ca725185a9d0bfad983cfdcd0b8646fbdf6d84f8dab93330a701",
+    "measurements/working_diagnostic_summary.csv": "47fa2930622e00aeec48570d82c3d2c5970349436d5a05e95091adeb6d691041"
+  },
+  "pytest_command": "docker compose -f compose.yaml run --rm -T app pytest -q",
+  "pytest_exit_code": 0,
+  "pytest_completed_at": "2026-10-08T10:08:39.501056+00:00",
+  "pytest_summary": "60 passed, 1 warning in 15.11s",
+  "working_after_pytest": {
+    "counts": {
+      "services": 30,
+      "specialists": 200,
+      "users": 1,
+      "slots": 200000,
+      "appointments": 100001
+    },
+    "fingerprint": "a346f5f92b915a30db2018940bc155f10efe925d0c0098488c18448baa687b67",
+    "demo_record": {
+      "id": 100001,
+      "slot_id": 49006,
+      "created_by_id": 1,
+      "client_name": "Родионов Сергей Олегович",
+      "client_contact": "demo@example.com",
+      "status": "cancelled",
+      "created_at": "2026-10-08 06:13:14.715850+00:00",
+      "cancelled_at": "2026-10-08 06:16:28.428096+00:00"
+    },
+    "sequences": {
+      "services": {
+        "last_value": 30,
+        "is_called": true
+      },
+      "specialists": {
+        "last_value": 200,
+        "is_called": true
+      },
+      "users": {
+        "last_value": 1,
+        "is_called": true
+      },
+      "slots": {
+        "last_value": 200000,
+        "is_called": true
+      },
+      "appointments": {
+        "last_value": 100001,
+        "is_called": true
+      }
+    },
+    "test_schemas": []
+  },
+  "working_preserved_after_pytest": true,
+  "protected_after_pytest": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/api.py": "687f0109ee2b7ae74d88a0512ab349d11ce1f25d9f5c6a4dbf56757bdc918c2a",
+    "app/auth.py": "5b7e23980886391472feaaa18991fb6893467d5bdd674d60727b9fb16d484f06",
+    "app/cli.py": "4bc3ba107760b66bc7a55fa318007dcb1bcc6ea9be11beb8e3a30e8012cd397a",
+    "app/config.py": "3bff5901fad953e28e81ce013a2eeec33143d6cfe32e5678c40a598c979c3c45",
+    "app/db.py": "0478a289adc79436b7fd143faf3aa3ae291e8d9ba6eca0ba0d34d71a9f1b1301",
+    "app/main.py": "139eb9d595188ac47fbfcf33626a473ee458cb7b40a4e1c82c5ea70b281b66f0",
+    "app/measurement.py": "caada60071a42c27eb82920f6df8dc16edf192a37dead1bc8e423e345bda595d",
+    "app/models.py": "55db997a9d1741fe54ad716b5353d174c13e7b033071e0819cbbe5418df92892",
+    "app/observation.py": "213caaf2e309a660b491614f6f9b56451efa89277bb2153567d8e12b6e782f74",
+    "app/pages.py": "4fe1f1503b366fb8d81fdec887578ce86168d111803cca5754c8fc5b78301364",
+    "app/schemas.py": "a0502f213db0ed37d4a8f5b858b30435a99e2932ec7ad6cf47e0eb683262f1cb",
+    "app/seed.py": "a27e8148caf50222c338687801b57aa6bb49fce14536e02e41f8165d20bacd8d",
+    "app/services.py": "7d797735051a97d8197e1f99ebcb3e63bd288e6333aa93ca2e3487b41bc8c2a3",
+    "app/static/app.js": "950faa433bce64215d04a9becf2c3b8661de3349033b094b2a10b9f0e31d89c7",
+    "app/static/style.css": "b4a521df5ce5f009801b3cb0905f0c9a8f4218e1edbb018c3269dab8e2e60cef",
+    "app/templates/appointment.html": "8fa649d783855fe17be3d82b2b1a9b752b0a48e8036416dd40900d607603c068",
+    "app/templates/appointments.html": "6eef3117c0108b6b2917681510b07a91bdc46b10dccfe8f8e9b0b9ae58bbf4c0",
+    "app/templates/base.html": "727ea2c4cdb1e320afaccebcec74dd9cf299531c60ec245fc68e852fba5038b8",
+    "app/templates/booking.html": "3227ade3395380cfe59e7471047d7ce0ccac6dc63d2b8c5823748a8a53b3910e",
+    "app/templates/login.html": "239b3765de1692c615f68e90b069428ec1c12a9e4c897afdb494a9dd45a13ea2",
+    "app/templates/pagination.html": "431aa77b5d2d8ff44cd1d80c5bd7b840a7e740747e8c904b1f2e4171159059af",
+    "app/templates/summary.html": "7a4f0c0d77e6b6ab20d34ade1fbc1aa70e84ec06d3cb25f2ab3ab33ec3252006",
+    "tests/conftest.py": "2e6ba2c3865e728ca6b5233c7930a8e348e4ce0ea37d634ef8bd44ceef16220e",
+    "tests/test_api.py": "feb3a8b96b7c8c0ecc5ab0e375a2630db32331c72d2bec4642021baebc5d93fb",
+    "tests/test_measurement.py": "a3745bd0522401a3abdf228f1fd9990f174ca782abec3add2ecd576cbd4df1b0",
+    "tests/test_rules.py": "13bbfecf86788412aacd5f722ee89a3d025fc2a94a432f3bad4e95859236b9d0",
+    "measurements/business_logic.sha256.json": "001a4328222e6fbb191a37299d69bf54a6549ab8785e53b5328818e6798b7a51",
+    "measurements/comparison.csv": "65936285d9a52f012e130a41405890408ff14ff790f83d97e98bcbf5479f9167",
+    "measurements/comparison.json": "07d7d3e557304f6d615abf77665fede2c54478db5073f8d93b373772dc3d0729",
+    "measurements/small_baseline.json": "85dd970573d24e13ef54ca06d98fb643cacd2fed22abd4313a64b17e21e70cf9",
+    "measurements/small_baseline_raw.csv": "d9f681ea8636bea871a3462f9c2de78e77ce0339c2465ce33af61bbe5c3f9deb",
+    "measurements/small_baseline_summary.csv": "f619f226e312a589af9cd518ae43fcca0225f281b046f5608a4212ba50aee7c4",
+    "measurements/small_diagnostic.json": "5828357eb978facd72497d9dc939f4c180b868eb3da3e68ac14ff6ed07981464",
+    "measurements/small_diagnostic_raw.csv": "39cc8f6c2470cb03fed5135444bb014de56e8f1ee0713d0fa01515080424a7ef",
+    "measurements/small_diagnostic_summary.csv": "3b7abdbab66af5caa8f5ee7a06dcb736a4ee5254350f26fa9be852277c226608",
+    "measurements/verification.json": "131f2ee592752a2e336897b7b41dd90c69e392dcb6ea7232d955eca4fc45e22a",
+    "measurements/working_baseline.json": "c9296099b6775c86bb283211d0c31ed9f90597f2ee1fa4530fb010f0b4f13b6c",
+    "measurements/working_baseline_raw.csv": "51fac288bd94fc1ba38d1a8ed0a78310d4509ace6f762f022dc0acafc7917cf4",
+    "measurements/working_baseline_summary.csv": "9c2e8a22534995c1c0d70c700d905d61d476ee5b218aa8bae2954edb3cb21547",
+    "measurements/working_diagnostic.json": "cad3b275461dfc46d7b1ad681f03c02e955d8addb3278f90ed59255af8c10d50",
+    "measurements/working_diagnostic_raw.csv": "f28394197660ca725185a9d0bfad983cfdcd0b8646fbdf6d84f8dab93330a701",
+    "measurements/working_diagnostic_summary.csv": "47fa2930622e00aeec48570d82c3d2c5970349436d5a05e95091adeb6d691041"
+  },
+  "protected_unchanged_after_pytest": true,
+  "clean_start": {
+    "project": "sergey_rodionov_dz1_check_20261008_130925",
+    "app_port": 18080,
+    "db_port": 15433,
+    "volume": "sergey_rodionov_dz1_check_20261008_130925_postgres_data",
+    "started_at": "2026-10-08T10:09:25.129954+00:00",
+    "commands": [
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 build --progress plain",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:32.050027+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 up -d --wait db",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:37.707533+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 run --rm -T app python -m app.cli init-db",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:41.153918+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 run --rm -T app python -m app.cli seed --size small",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:44.842287+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 run --rm -T app python -m app.cli data-counts",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:48.086877+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 up -d app",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:49.894734+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 exec -T app python -m scripts.check_app --size small",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:56.223964+00:00"
+      },
+      {
+        "command": "docker compose -f compose.yaml --env-file .env.example -p sergey_rodionov_dz1_check_20261008_130925 ps",
+        "exit_code": 0,
+        "completed_at": "2026-10-08T10:09:56.904551+00:00"
+      }
+    ],
+    "same_host": "Docker Desktop / WSL2; separate project and fresh volume; build cache may be reused",
+    "volume_absent_before_start": true,
+    "functional_checks_passed": true,
+    "volume_inspect": {
+      "CreatedAt": "2026-10-08T13:09:32+03:00",
+      "Driver": "local",
+      "Labels": {
+        "com.docker.compose.config-hash": "04583037747341070a3e412eb4d11c4b31e281a10adab4d4ae13069bb0795f2b",
+        "com.docker.compose.project": "sergey_rodionov_dz1_check_20261008_130925",
+        "com.docker.compose.version": "5.5.1",
+        "com.docker.compose.volume": "postgres_data"
+      },
+      "Mountpoint": "/var/lib/docker/volumes/sergey_rodionov_dz1_check_20261008_130925_postgres_data/_data",
+      "Name": "sergey_rodionov_dz1_check_20261008_130925_postgres_data",
+      "Options": null,
+      "Scope": "local"
+    },
+    "completed_at": "2026-10-08T10:09:57.270704+00:00",
+    "host_http_checks": {
+      "host_login_page": 200,
+      "host_login": 200,
+      "/appointments": 200,
+      "/booking": 200,
+      "/appointments/1": 200,
+      "/summary": 200,
+      "host_logout": 204
+    },
+    "cleanup_exit_code": 0,
+    "isolated_volume_removed": true
+  },
+  "working_after_clean_start": {
+    "counts": {
+      "services": 30,
+      "specialists": 200,
+      "users": 1,
+      "slots": 200000,
+      "appointments": 100001
+    },
+    "fingerprint": "a346f5f92b915a30db2018940bc155f10efe925d0c0098488c18448baa687b67",
+    "demo_record": {
+      "id": 100001,
+      "slot_id": 49006,
+      "created_by_id": 1,
+      "client_name": "Родионов Сергей Олегович",
+      "client_contact": "demo@example.com",
+      "status": "cancelled",
+      "created_at": "2026-10-08 06:13:14.715850+00:00",
+      "cancelled_at": "2026-10-08 06:16:28.428096+00:00"
+    },
+    "sequences": {
+      "services": {
+        "last_value": 30,
+        "is_called": true
+      },
+      "specialists": {
+        "last_value": 200,
+        "is_called": true
+      },
+      "users": {
+        "last_value": 1,
+        "is_called": true
+      },
+      "slots": {
+        "last_value": 200000,
+        "is_called": true
+      },
+      "appointments": {
+        "last_value": 100001,
+        "is_called": true
+      }
+    },
+    "test_schemas": []
+  },
+  "working_preserved_after_clean_start": true,
+  "protected_after_clean_start": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/api.py": "687f0109ee2b7ae74d88a0512ab349d11ce1f25d9f5c6a4dbf56757bdc918c2a",
+    "app/auth.py": "5b7e23980886391472feaaa18991fb6893467d5bdd674d60727b9fb16d484f06",
+    "app/cli.py": "4bc3ba107760b66bc7a55fa318007dcb1bcc6ea9be11beb8e3a30e8012cd397a",
+    "app/config.py": "3bff5901fad953e28e81ce013a2eeec33143d6cfe32e5678c40a598c979c3c45",
+    "app/db.py": "0478a289adc79436b7fd143faf3aa3ae291e8d9ba6eca0ba0d34d71a9f1b1301",
+    "app/main.py": "139eb9d595188ac47fbfcf33626a473ee458cb7b40a4e1c82c5ea70b281b66f0",
+    "app/measurement.py": "caada60071a42c27eb82920f6df8dc16edf192a37dead1bc8e423e345bda595d",
+    "app/models.py": "55db997a9d1741fe54ad716b5353d174c13e7b033071e0819cbbe5418df92892",
+    "app/observation.py": "213caaf2e309a660b491614f6f9b56451efa89277bb2153567d8e12b6e782f74",
+    "app/pages.py": "4fe1f1503b366fb8d81fdec887578ce86168d111803cca5754c8fc5b78301364",
+    "app/schemas.py": "a0502f213db0ed37d4a8f5b858b30435a99e2932ec7ad6cf47e0eb683262f1cb",
+    "app/seed.py": "a27e8148caf50222c338687801b57aa6bb49fce14536e02e41f8165d20bacd8d",
+    "app/services.py": "7d797735051a97d8197e1f99ebcb3e63bd288e6333aa93ca2e3487b41bc8c2a3",
+    "app/static/app.js": "950faa433bce64215d04a9becf2c3b8661de3349033b094b2a10b9f0e31d89c7",
+    "app/static/style.css": "b4a521df5ce5f009801b3cb0905f0c9a8f4218e1edbb018c3269dab8e2e60cef",
+    "app/templates/appointment.html": "8fa649d783855fe17be3d82b2b1a9b752b0a48e8036416dd40900d607603c068",
+    "app/templates/appointments.html": "6eef3117c0108b6b2917681510b07a91bdc46b10dccfe8f8e9b0b9ae58bbf4c0",
+    "app/templates/base.html": "727ea2c4cdb1e320afaccebcec74dd9cf299531c60ec245fc68e852fba5038b8",
+    "app/templates/booking.html": "3227ade3395380cfe59e7471047d7ce0ccac6dc63d2b8c5823748a8a53b3910e",
+    "app/templates/login.html": "239b3765de1692c615f68e90b069428ec1c12a9e4c897afdb494a9dd45a13ea2",
+    "app/templates/pagination.html": "431aa77b5d2d8ff44cd1d80c5bd7b840a7e740747e8c904b1f2e4171159059af",
+    "app/templates/summary.html": "7a4f0c0d77e6b6ab20d34ade1fbc1aa70e84ec06d3cb25f2ab3ab33ec3252006",
+    "tests/conftest.py": "2e6ba2c3865e728ca6b5233c7930a8e348e4ce0ea37d634ef8bd44ceef16220e",
+    "tests/test_api.py": "feb3a8b96b7c8c0ecc5ab0e375a2630db32331c72d2bec4642021baebc5d93fb",
+    "tests/test_measurement.py": "a3745bd0522401a3abdf228f1fd9990f174ca782abec3add2ecd576cbd4df1b0",
+    "tests/test_rules.py": "13bbfecf86788412aacd5f722ee89a3d025fc2a94a432f3bad4e95859236b9d0",
+    "measurements/business_logic.sha256.json": "001a4328222e6fbb191a37299d69bf54a6549ab8785e53b5328818e6798b7a51",
+    "measurements/comparison.csv": "65936285d9a52f012e130a41405890408ff14ff790f83d97e98bcbf5479f9167",
+    "measurements/comparison.json": "07d7d3e557304f6d615abf77665fede2c54478db5073f8d93b373772dc3d0729",
+    "measurements/small_baseline.json": "85dd970573d24e13ef54ca06d98fb643cacd2fed22abd4313a64b17e21e70cf9",
+    "measurements/small_baseline_raw.csv": "d9f681ea8636bea871a3462f9c2de78e77ce0339c2465ce33af61bbe5c3f9deb",
+    "measurements/small_baseline_summary.csv": "f619f226e312a589af9cd518ae43fcca0225f281b046f5608a4212ba50aee7c4",
+    "measurements/small_diagnostic.json": "5828357eb978facd72497d9dc939f4c180b868eb3da3e68ac14ff6ed07981464",
+    "measurements/small_diagnostic_raw.csv": "39cc8f6c2470cb03fed5135444bb014de56e8f1ee0713d0fa01515080424a7ef",
+    "measurements/small_diagnostic_summary.csv": "3b7abdbab66af5caa8f5ee7a06dcb736a4ee5254350f26fa9be852277c226608",
+    "measurements/verification.json": "131f2ee592752a2e336897b7b41dd90c69e392dcb6ea7232d955eca4fc45e22a",
+    "measurements/working_baseline.json": "c9296099b6775c86bb283211d0c31ed9f90597f2ee1fa4530fb010f0b4f13b6c",
+    "measurements/working_baseline_raw.csv": "51fac288bd94fc1ba38d1a8ed0a78310d4509ace6f762f022dc0acafc7917cf4",
+    "measurements/working_baseline_summary.csv": "9c2e8a22534995c1c0d70c700d905d61d476ee5b218aa8bae2954edb3cb21547",
+    "measurements/working_diagnostic.json": "cad3b275461dfc46d7b1ad681f03c02e955d8addb3278f90ed59255af8c10d50",
+    "measurements/working_diagnostic_raw.csv": "f28394197660ca725185a9d0bfad983cfdcd0b8646fbdf6d84f8dab93330a701",
+    "measurements/working_diagnostic_summary.csv": "47fa2930622e00aeec48570d82c3d2c5970349436d5a05e95091adeb6d691041"
+  },
+  "protected_unchanged_after_clean_start": true,
+  "working_after_cleanup": {
+    "counts": {
+      "services": 30,
+      "specialists": 200,
+      "users": 1,
+      "slots": 200000,
+      "appointments": 100001
+    },
+    "fingerprint": "a346f5f92b915a30db2018940bc155f10efe925d0c0098488c18448baa687b67",
+    "demo_record": {
+      "id": 100001,
+      "slot_id": 49006,
+      "created_by_id": 1,
+      "client_name": "Родионов Сергей Олегович",
+      "client_contact": "demo@example.com",
+      "status": "cancelled",
+      "created_at": "2026-10-08 06:13:14.715850+00:00",
+      "cancelled_at": "2026-10-08 06:16:28.428096+00:00"
+    },
+    "sequences": {
+      "services": {
+        "last_value": 30,
+        "is_called": true
+      },
+      "specialists": {
+        "last_value": 200,
+        "is_called": true
+      },
+      "users": {
+        "last_value": 1,
+        "is_called": true
+      },
+      "slots": {
+        "last_value": 200000,
+        "is_called": true
+      },
+      "appointments": {
+        "last_value": 100001,
+        "is_called": true
+      }
+    },
+    "test_schemas": []
+  },
+  "working_preserved_after_cleanup": true,
+  "finished_at": "2026-10-08T10:10:59.207492+00:00",
+  "repository": {
+    "command": "git remote -v",
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+    "url": null,
+    "remaining": "Создать и опубликовать репозиторий, добавить фактическую URL-ссылку в отчёт, предоставить преподавателю доступ до защиты."
+  },
+  "tested_image_sources_match_workspace": true
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Запись на приём{% endblock %} — sergey_rodionov</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="container header-row">
+    <div><strong>Запись на приём</strong><small>Курсовая работа · sergey_rodionov</small></div>
+    {% if user %}
+    <nav aria-label="Основная навигация">
+      <a href="/appointments">Записи</a><a href="/booking">Новая запись</a><a href="/summary">Сводка</a>
+      <button type="button" data-logout>Выйти</button>
+    </nav>
+    {% endif %}
+  </div>
+</header>
+<main class="container">
+  {% if user %}<p class="muted">Оператор: {{ user.full_name }}</p>{% endif %}
+  <p id="message" role="alert" hidden></p>
+  {% block content %}{% endblock %}
+</main>
+<footer class="container">Родионов Сергей Олегович · БИСТ-24-ПО-2 · PostgreSQL / sergey_rodionov</footer>
+</body>
+</html>
