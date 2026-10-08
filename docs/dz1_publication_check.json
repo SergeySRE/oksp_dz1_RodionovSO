@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-10-08T13:58:43.488598+00:00",
+  "verification_stage": "after initial publication; final documentation commit is checked separately in the task output",
+  "repository": "https://github.com/SergeySRE/oksp_dz1_RodionovSO",
+  "private": false,
+  "default_branch": "main",
+  "anonymous_repository_page_http_status": 200,
+  "anonymous_repository_api_http_status": 200,
+  "verified_initial_main_commit": "79ca9847382c2ae0082c370462108f0f2f6e2087",
+  "verified_files": 80,
+  "all_remote_blobs_match_local_bytes": true,
+  "measurements_files": 16,
+  "original_png_files": 14,
+  "env_excluded": true,
+  "env_example_included": true,
+  "temporary_render_files_excluded": true,
+  "final_report": "docs/ДЗ1_Родионов_Сергей_отчёт.docx",
+  "final_report_sha256": "3c825f71c35999e8ebc6ff11d6c7f0c4052acb1d2956f40a908a7f9dccffed35"
+}
