@@ -1,0 +1,48 @@
+name: sergey_rodionov_dz2
+services:
+  db:
+    image: postgres:16.10-bookworm
+    environment:
+      POSTGRES_DB: sergey_rodionov
+      POSTGRES_USER: sergey_rodionov
+      POSTGRES_PASSWORD: dz2_local_example
+    volumes:
+      - dz2_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sergey_rodionov -d sergey_rodionov"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  app:
+    build:
+      context: ..
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", "${DZ2_WORKERS:-1}"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://sergey_rodionov:dz2_local_example@db:5432/sergey_rodionov
+      DB_SCHEMA: sergey_rodionov
+      SESSION_SECRET: dz2-local-example-used-only-in-the-test-network
+      SESSION_HTTPS_ONLY: "false"
+      DEMO_LOGIN: demo
+      DEMO_PASSWORD: demo
+    depends_on:
+      db:
+        condition: service_healthy
+  k6:
+    image: grafana/k6:0.55.0
+    profiles: [tools]
+    volumes:
+      - .:/load:ro
+  profiler:
+    build:
+      context: .
+      dockerfile: profiler.Dockerfile
+    profiles: [tools]
+    pid: "service:app"
+    cap_add: [SYS_PTRACE]
+    entrypoint: ["py-spy"]
+    network_mode: none
+networks:
+  default:
+    internal: true
+volumes:
+  dz2_data:
