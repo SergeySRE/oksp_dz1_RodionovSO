@@ -1,0 +1,9 @@
+sergey_rodionov: schema and tables initialized
+sergey_rodionov: seed=working, random.seed(42)
+{
+  "services": 30,
+  "specialists": 200,
+  "users": 1,
+  "slots": 200000,
+  "appointments": 100000
+}

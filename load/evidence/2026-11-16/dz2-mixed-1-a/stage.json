@@ -1,0 +1,25 @@
+{
+  "project": "sergey_rodionov_dz2",
+  "mode": "mixed",
+  "offered_rps": 1,
+  "duration_seconds": 30,
+  "configured_vus": 20,
+  "profile_seconds": null,
+  "code_head": "f7fc82664459e7f1b85d78586118412f69676e24",
+  "git_dirty": false,
+  "app_image": "sha256:66654000cc1b7088b042a9a426adb309ec4ff57029d7c48acfdac948aed1182e",
+  "app_command": [
+    "uvicorn",
+    "app.main:app",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8080",
+    "--workers",
+    "1"
+  ],
+  "start_utc": "2026-11-16T19:40:15.250+00:00",
+  "finish_utc": "2026-11-16T19:40:46.964+00:00",
+  "k6_exit_code": 99,
+  "profile_exit_code": null
+}

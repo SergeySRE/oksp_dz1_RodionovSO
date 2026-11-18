@@ -1,0 +1,7 @@
+app-1  | 2026-11-16T19:42:03.900490496Z INFO:     172.20.0.4:51180 - "POST /api/auth/login HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:42:09.454530428Z INFO:     172.20.0.4:51194 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:42:12.684417160Z INFO:     172.20.0.4:51198 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:42:19.252940394Z INFO:     172.20.0.4:51210 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:42:29.183624172Z INFO:     172.20.0.4:51244 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:42:29.254986827Z INFO:     172.20.0.4:51226 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:42:31.376025556Z INFO:     172.20.0.4:51232 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK

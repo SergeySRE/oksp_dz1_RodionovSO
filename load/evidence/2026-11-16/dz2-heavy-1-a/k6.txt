@@ -1,0 +1,73 @@
+ Container sergey_rodionov_dz2-k6-run-f8af12c3f67f Creating 
+ Container sergey_rodionov_dz2-k6-run-f8af12c3f67f Created 
+time="2026-11-16T19:42:03Z" level=info msg="sergey_rodionov | WORKING | heavy | 1 req/s | 30s | VUs 20" source=console
+time="2026-11-16T19:42:26Z" level=warning msg="Insufficient VUs, reached 20 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=heavy
+time="2026-11-16T19:42:39Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:39Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=6" source=console
+time="2026-11-16T19:42:40Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:40Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=7" source=console
+time="2026-11-16T19:42:41Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:41Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=8" source=console
+time="2026-11-16T19:42:42Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:42Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=9" source=console
+time="2026-11-16T19:42:43Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:43Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=10" source=console
+time="2026-11-16T19:42:44Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:44Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=11" source=console
+time="2026-11-16T19:42:45Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:45Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=12" source=console
+time="2026-11-16T19:42:46Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:46Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=13" source=console
+time="2026-11-16T19:42:47Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:47Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=14" source=console
+time="2026-11-16T19:42:48Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:48Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=15" source=console
+time="2026-11-16T19:42:49Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:49Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=16" source=console
+time="2026-11-16T19:42:50Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:50Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=17" source=console
+time="2026-11-16T19:42:51Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:51Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=18" source=console
+time="2026-11-16T19:42:52Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:52Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=19" source=console
+time="2026-11-16T19:42:53Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:53Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=20" source=console
+time="2026-11-16T19:42:54Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:54Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=21" source=console
+time="2026-11-16T19:42:55Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:55Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=22" source=console
+time="2026-11-16T19:42:59Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:42:59Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=23" source=console
+time="2026-11-16T19:43:00Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:43:00Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=24" source=console
+time="2026-11-16T19:43:01Z" level=warning msg="Request Failed" error="Get \"http://app:8080/api/summary?date_from=2026-01-01&date_to=2026-12-31\": request timeout"
+time="2026-11-16T19:43:01Z" level=error msg="summary: unexpected HTTP 0; error_code=1050; iteration=25" source=console
+
+     ✗ summary
+      ↳  23% — ✓ 6 / ✗ 20
+
+     checks.........................: 23.07% 6 out of 26
+     data_received..................: 164 kB 2.8 kB/s
+     data_sent......................: 5.7 kB 99 B/s
+     dropped_iterations.............: 4      0.068814/s
+     http_req_blocked...............: count=27 med=440.7µs p(95)=1.08ms   max=2.31ms 
+     http_req_connecting............: count=27 med=349.7µs p(95)=737.47µs max=873.6µs
+     http_req_duration..............: count=27 med=30s     p(95)=30s      max=30s    
+       { expected_response:true }...: count=7  med=13.35s  p(95)=23.13s   max=23.47s 
+     ✗ { phase:load }...............: count=26 med=30s     p(95)=30s      max=30s    
+     http_req_failed................: 74.07% 20 out of 27
+     ✗ { phase:load }...............: 76.92% 20 out of 26
+     http_req_receiving.............: count=27 med=0s      p(95)=335.12µs max=702.7µs
+     http_req_sending...............: count=27 med=84.7µs  p(95)=189.11µs max=225.2µs
+     http_req_tls_handshaking.......: count=27 med=0s      p(95)=0s       max=0s     
+     http_req_waiting...............: count=27 med=30s     p(95)=30s      max=30s    
+     http_reqs......................: 27     0.464496/s
+     iteration_duration.............: count=26 med=30s     p(95)=30s      max=30s    
+     iterations.....................: 26     0.447293/s
+     load_window_start..............: 1      0.017204/s
+   ✗ operation_errors...............: 76.92% 20 out of 26
+     vus............................: 1      min=1        max=20
+     vus_max........................: 20     min=20       max=20
+
+time="2026-11-16T19:43:01Z" level=error msg="thresholds on metrics 'http_req_duration{phase:load}, http_req_failed{phase:load}, operation_errors' have been crossed"
+

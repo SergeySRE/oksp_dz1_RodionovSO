@@ -1,0 +1,6 @@
+ Container sergey_rodionov_dz2-profiler-run-9a67cafe8171 Creating 
+ Container sergey_rodionov_dz2-profiler-run-9a67cafe8171 Created 
+py-spy> Sampling process 100 times a second for 15 seconds. Press Control-C to exit.
+
+py-spy> Wrote raw flamegraph data to '/run-data/profile.txt'. Samples: 1903 Errors: 5
+py-spy> You can use the flamegraph.pl script from https://github.com/brendangregg/flamegraph to generate a SVG

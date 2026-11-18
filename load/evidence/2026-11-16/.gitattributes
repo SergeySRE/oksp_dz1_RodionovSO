@@ -1,0 +1,6 @@
+# Keep the original bytes for SHA256SUMS on Windows and Linux.
+* -text
+**/k6.txt whitespace=-blank-at-eol,-blank-at-eof
+**/py-spy.txt whitespace=-blank-at-eol
+sql-explain.py whitespace=cr-at-eol,-blank-at-eof
+stand.txt whitespace=cr-at-eol

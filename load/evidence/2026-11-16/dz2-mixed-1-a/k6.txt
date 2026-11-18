@@ -1,0 +1,37 @@
+ Container sergey_rodionov_dz2-k6-run-11ee254dd965 Creating 
+ Container sergey_rodionov_dz2-k6-run-11ee254dd965 Created 
+time="2026-11-16T19:40:16Z" level=info msg="sergey_rodionov | WORKING | mixed | 1 req/s | 30s | VUs 20" source=console
+
+     ✓ appointment_detail
+     ✓ appointment_cancel
+     ✓ appointments_list
+     ✓ specialists
+     ✓ free_slots
+     ✓ appointment_create
+     ✓ services
+     ✓ summary
+
+     checks.........................: 100.00% 30 out of 30
+     data_received..................: 220 kB  7.3 kB/s
+     data_sent......................: 6.5 kB  214 B/s
+     http_req_blocked...............: count=31 med=652.4µs  p(95)=910.6µs  max=1.49ms 
+     http_req_connecting............: count=31 med=466.8µs  p(95)=606.45µs max=789.8µs
+     http_req_duration..............: count=31 med=300.69ms p(95)=622.01ms max=2.91s  
+       { expected_response:true }...: count=31 med=300.69ms p(95)=622.01ms max=2.91s  
+     ✗ { phase:load }...............: count=30 med=303.18ms p(95)=624.12ms max=2.91s  
+     http_req_failed................: 0.00%   0 out of 31
+     ✓ { phase:load }...............: 0.00%   0 out of 30
+     http_req_receiving.............: count=31 med=172.1µs  p(95)=2.8ms    max=5.51ms 
+     http_req_sending...............: count=31 med=136.19µs p(95)=228.65µs max=243.2µs
+     http_req_tls_handshaking.......: count=31 med=0s       p(95)=0s       max=0s     
+     http_req_waiting...............: count=31 med=300.23ms p(95)=621.75ms max=2.91s  
+     http_reqs......................: 31      1.027902/s
+     iteration_duration.............: count=30 med=304.97ms p(95)=625.6ms  max=2.91s  
+     iterations.....................: 30      0.994744/s
+     load_window_start..............: 1       0.033158/s
+   ✓ operation_errors...............: 0.00%   0 out of 30
+     vus............................: 0       min=0        max=1 
+     vus_max........................: 20      min=20       max=20
+
+time="2026-11-16T19:40:46Z" level=error msg="thresholds on metrics 'http_req_duration{phase:load}' have been crossed"
+

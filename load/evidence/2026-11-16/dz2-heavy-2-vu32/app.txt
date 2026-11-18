@@ -1,0 +1,1396 @@
+app-1  | 2026-11-16T19:48:47.837306621Z INFO:     172.20.0.4:40434 - "POST /api/auth/login HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:48:57.022915706Z INFO:     172.20.0.4:40440 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:48:59.517108950Z INFO:     172.20.0.4:40472 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:49:00.231976534Z INFO:     172.20.0.4:40454 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:49:08.189537943Z INFO:     172.20.0.4:40458 - "GET /api/summary?date_from=2026-01-01&date_to=2026-12-31 HTTP/1.1" 200 OK
+app-1  | 2026-11-16T19:49:28.529316692Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:28.529356992Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:28.529362192Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:28.529366792Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:28.529371092Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529375092Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:28.529379392Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529383392Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529387492Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:28.529391692Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529395892Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:28.529400192Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529404392Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:28.529408692Z     raise exc
+app-1  | 2026-11-16T19:49:28.529412692Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:28.529417292Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:28.529421392Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:28.529425592Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529443192Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:28.529446892Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:28.529450092Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:28.529453492Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529456792Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:28.529460092Z     raise exc
+app-1  | 2026-11-16T19:49:28.529463092Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:28.529466492Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:28.529469692Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:28.529472992Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529476192Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:28.529479492Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529484892Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:28.529488192Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529491392Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:28.529494692Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:28.529497892Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:28.529501292Z     raise exc
+app-1  | 2026-11-16T19:49:28.529504292Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:28.529507692Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:28.529510792Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:28.529514092Z     response = await f(request)
+app-1  | 2026-11-16T19:49:28.529517292Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529520392Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:28.529523792Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:28.529526892Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529530092Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:28.529533492Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:28.529536692Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529543692Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:28.529547192Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:28.529550392Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529553492Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:28.529556892Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:28.529560092Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529563192Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:28.529566692Z     return await future
+app-1  | 2026-11-16T19:49:28.529569692Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529572892Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:28.529576292Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:28.529579392Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529582592Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:28.529585892Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:28.529589092Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529592792Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:28.529596192Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:28.529599392Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529602392Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:28.529605792Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:28.529608892Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529611892Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:28.529615292Z     session.execute(
+app-1  | 2026-11-16T19:49:28.529618292Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:28.529621692Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:28.529624792Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529627892Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:28.529631292Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:28.529634392Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529637492Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:28.529640892Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:28.529656292Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529661592Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:28.529665492Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:28.529668892Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:28.529671992Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529674992Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:28.529678392Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:28.529681492Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529684492Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:28.529687892Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:28.529690992Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529693992Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:28.529697292Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:28.529700392Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529703492Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:28.529706892Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:28.529709992Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529713492Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:28.529716892Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:28.529720092Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529723192Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:28.529726492Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:28.529729492Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529732592Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:28.529736092Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:28.529739092Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:28.529742092Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:28.529745392Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:28.529748492Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:29.477087308Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:29.477126208Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:29.477143608Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:29.477162908Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:29.477165708Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477168208Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:29.477170908Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477173408Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477176008Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:29.477178808Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477181408Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:29.477184108Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477186708Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:29.477189508Z     raise exc
+app-1  | 2026-11-16T19:49:29.477192008Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:29.477194808Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:29.477197408Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:29.477200108Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477202708Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:29.477205608Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:29.477208208Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:29.477215708Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477218508Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:29.477221308Z     raise exc
+app-1  | 2026-11-16T19:49:29.477223808Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:29.477226408Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:29.477228808Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:29.477231708Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477234408Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:29.477237208Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477241508Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:29.477249309Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477252009Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:29.477254709Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:29.477257409Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:29.477260009Z     raise exc
+app-1  | 2026-11-16T19:49:29.477262709Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:29.477265609Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:29.477268309Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:29.477271209Z     response = await f(request)
+app-1  | 2026-11-16T19:49:29.477273809Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477276509Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:29.477279109Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:29.477281809Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477284509Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:29.477287309Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:29.477289809Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477292509Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:29.477295409Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:29.477297809Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477300409Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:29.477303309Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:29.477305709Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477308409Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:29.477311309Z     return await future
+app-1  | 2026-11-16T19:49:29.477313909Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477316309Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:29.477319009Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:29.477321609Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477324009Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:29.477326609Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:29.477332309Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477335609Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:29.477338409Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:29.477340709Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477343209Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:29.477346009Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:29.477348409Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477351009Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:29.477353709Z     session.execute(
+app-1  | 2026-11-16T19:49:29.477356309Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:29.477359109Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:29.477361709Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477364209Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:29.477367109Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:29.477369709Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477372509Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:29.477375709Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:29.477378709Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477381409Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:29.477384609Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:29.477387309Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:29.477389709Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477392209Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:29.477395109Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:29.477397609Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477399809Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:29.477402409Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:29.477404609Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477407109Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:29.477409809Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:29.477412309Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477414909Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:29.477421109Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:29.477423909Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477427109Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:29.477429809Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:29.477432209Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477434609Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:29.477437309Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:29.477439709Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477442209Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:29.477444809Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:29.477447109Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:29.477449509Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:29.477452109Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:29.477454409Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:30.013523987Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:30.013576287Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:30.013580887Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:30.013585087Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:30.013588187Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013591287Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:30.013594487Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013597487Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013600487Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:30.013603787Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013606787Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:30.013610587Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013613587Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:30.013616987Z     raise exc
+app-1  | 2026-11-16T19:49:30.013619887Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:30.013623387Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:30.013654187Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:30.013657687Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013660687Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:30.013664187Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:30.013667187Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:30.013670487Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013673587Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:30.013676787Z     raise exc
+app-1  | 2026-11-16T19:49:30.013679687Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:30.013682887Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:30.013685887Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:30.013689087Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013692087Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:30.013695387Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013700187Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:30.013703687Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013706687Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:30.013709787Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.013712987Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:30.013716087Z     raise exc
+app-1  | 2026-11-16T19:49:30.013719187Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:30.013722487Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:30.013725387Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:30.013728587Z     response = await f(request)
+app-1  | 2026-11-16T19:49:30.013731487Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013735287Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:30.013738387Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:30.013741687Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013744687Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:30.013752687Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:30.013759987Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013763187Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:30.013766687Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:30.013780687Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013784587Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:30.013788787Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:30.013792187Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013795587Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:30.013799487Z     return await future
+app-1  | 2026-11-16T19:49:30.013803187Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013806687Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:30.013810787Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:30.013814487Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013818487Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:30.013822387Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:30.013826187Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013830587Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:30.013834587Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:30.013838187Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013841887Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:30.013845587Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:30.013849187Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013852987Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:30.013857087Z     session.execute(
+app-1  | 2026-11-16T19:49:30.013860487Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:30.013864587Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:30.013882387Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013887887Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:30.013892187Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:30.013895887Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013899387Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:30.013908587Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:30.013912487Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013915987Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:30.013920387Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:30.013924187Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:30.013927987Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013931487Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:30.013935487Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:30.013938987Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013942787Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:30.013946687Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:30.013950287Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013953787Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:30.013957687Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:30.013961188Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013964788Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:30.013968588Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:30.013971988Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013976588Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:30.013980588Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:30.013984188Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.013992688Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:30.013996888Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:30.014000388Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.014004088Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:30.014007988Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:30.014011388Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.014014888Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:30.014018888Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:30.014022488Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:30.574456774Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:30.574534674Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:30.574540074Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:30.574542974Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:30.574545174Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574547774Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:30.574550274Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574552574Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574554974Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:30.574557474Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574559974Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:30.574562574Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574564974Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:30.574567574Z     raise exc
+app-1  | 2026-11-16T19:49:30.574569874Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:30.574572474Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:30.574574774Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:30.574577274Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574579774Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:30.574582374Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:30.574586274Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:30.574589074Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574591774Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:30.574594674Z     raise exc
+app-1  | 2026-11-16T19:49:30.574597074Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:30.574599774Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:30.574602474Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:30.574605774Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574607674Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:30.574609474Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574626574Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:30.574628574Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574630274Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:30.574631974Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:30.574633774Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:30.574635574Z     raise exc
+app-1  | 2026-11-16T19:49:30.574637174Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:30.574638974Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:30.574640674Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:30.574642474Z     response = await f(request)
+app-1  | 2026-11-16T19:49:30.574644174Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574645774Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:30.574647574Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:30.574649274Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574650974Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:30.574652774Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:30.574654974Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574656674Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:30.574658474Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:30.574660174Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574661874Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:30.574663675Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:30.574665375Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574666975Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:30.574668875Z     return await future
+app-1  | 2026-11-16T19:49:30.574670475Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574672175Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:30.574673975Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:30.574675675Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574677275Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:30.574681275Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:30.574683075Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574685075Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:30.574686875Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:30.574688575Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574690175Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:30.574691975Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:30.574693675Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574695375Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:30.574697175Z     session.execute(
+app-1  | 2026-11-16T19:49:30.574698775Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:30.574700575Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:30.574702275Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574703875Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:30.574705775Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:30.574707375Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574709075Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:30.574710875Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:30.574712575Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574714275Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:30.574716575Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:30.574718375Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:30.574720075Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574721775Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:30.574723575Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:30.574725175Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574726875Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:30.574728675Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:30.574730275Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574731975Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:30.574733775Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:30.574740575Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574742475Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:30.574744275Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:30.574745975Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574747875Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:30.574749675Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:30.574751275Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574752975Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:30.574754775Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:30.574756375Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574757975Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:30.574759775Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:30.574761375Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:30.574762975Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:30.574764775Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:30.574766475Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:31.903131318Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:31.903180018Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:31.903185918Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:31.903192318Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:31.903197118Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903201918Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:31.903207118Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903211618Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903216318Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:31.903221018Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903225618Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:31.903230518Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903235118Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:31.903240318Z     raise exc
+app-1  | 2026-11-16T19:49:31.903269618Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:31.903275318Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:31.903280118Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:31.903285018Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903289718Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:31.903294718Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:31.903299418Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:31.903304418Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903309418Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:31.903314318Z     raise exc
+app-1  | 2026-11-16T19:49:31.903318918Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:31.903324618Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:31.903329518Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:31.903334618Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903339318Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:31.903344618Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903351418Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:31.903355818Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903359018Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:31.903362318Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:31.903365518Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:31.903368918Z     raise exc
+app-1  | 2026-11-16T19:49:31.903371918Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:31.903375218Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:31.903378318Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:31.903382318Z     response = await f(request)
+app-1  | 2026-11-16T19:49:31.903385518Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903388618Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:31.903391918Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:31.903395118Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903402918Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:31.903406418Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:31.903409518Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903412718Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:31.903416018Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:31.903419118Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903422318Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:31.903425618Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:31.903428818Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903431918Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:31.903435318Z     return await future
+app-1  | 2026-11-16T19:49:31.903438318Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903441418Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:31.903444718Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:31.903447918Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903451018Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:31.903454218Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:31.903457518Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903461018Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:31.903464418Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:31.903467518Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903470518Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:31.903473918Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:31.903478918Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903483118Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:31.903488118Z     session.execute(
+app-1  | 2026-11-16T19:49:31.903492718Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:31.903497818Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:31.903502118Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903506518Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:31.903511918Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:31.903521318Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903526618Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:31.903531818Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:31.903536518Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903541118Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:31.903547318Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:31.903552518Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:31.903557118Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903561818Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:31.903567018Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:31.903571518Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903576318Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:31.903581218Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:31.903585418Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903588518Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:31.903591918Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:31.903595018Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903598118Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:31.903601418Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:31.903604418Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903608018Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:31.903611418Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:31.903614418Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903617518Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:31.903620918Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:31.903631718Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903635018Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:31.903638418Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:31.903641418Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:31.903644418Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:31.903647818Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:31.903660418Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:32.250144533Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:32.250187233Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:32.250190533Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:32.250193433Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:32.250195733Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250198233Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:32.250200533Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250202733Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250205133Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:32.250207533Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250209733Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:32.250211933Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250214633Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:32.250217033Z     raise exc
+app-1  | 2026-11-16T19:49:32.250219033Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:32.250221433Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:32.250223533Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:32.250225533Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250226933Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:32.250228533Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:32.250230033Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:32.250231533Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250233133Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:32.250234633Z     raise exc
+app-1  | 2026-11-16T19:49:32.250236033Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:32.250237633Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:32.250239133Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:32.250240733Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250258733Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:32.250261233Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250265133Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:32.250267833Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250270033Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:32.250272433Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.250274833Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:32.250277233Z     raise exc
+app-1  | 2026-11-16T19:49:32.250279533Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:32.250281833Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:32.250283933Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:32.250286133Z     response = await f(request)
+app-1  | 2026-11-16T19:49:32.250288233Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250290333Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:32.250292833Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:32.250295133Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250297233Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:32.250299633Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:32.250301933Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250304133Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:32.250306533Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:32.250308733Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250311033Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:32.250313233Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:32.250315333Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250317533Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:32.250319733Z     return await future
+app-1  | 2026-11-16T19:49:32.250321833Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250324533Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:32.250327133Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:32.250333233Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250335633Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:32.250338033Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:32.250340333Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250343033Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:32.250344733Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:32.250346133Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250347633Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:32.250349133Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:32.250350533Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250351933Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:32.250353533Z     session.execute(
+app-1  | 2026-11-16T19:49:32.250355033Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:32.250356633Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:32.250358033Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250359533Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:32.250361133Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:32.250362533Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250364033Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:32.250365633Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:32.250367133Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250368533Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:32.250370533Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:32.250372133Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:32.250373633Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250375033Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:32.250376633Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:32.250378133Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250379533Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:32.250381133Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:32.250382533Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250383933Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:32.250387633Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:32.250389133Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250390533Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:32.250392133Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:32.250393633Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250395333Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:32.250396933Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:32.250398433Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250399833Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:32.250401433Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:32.250402833Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250404533Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:32.250407133Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:32.250409133Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.250411333Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:32.250413733Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:32.250415833Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:32.592265347Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:32.592297447Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:32.592299747Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:32.592301747Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:32.592303447Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592304947Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:32.592306647Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592308147Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592309647Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:32.592311347Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592312947Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:32.592314647Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592316147Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:32.592331747Z     raise exc
+app-1  | 2026-11-16T19:49:32.592333447Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:32.592335147Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:32.592336647Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:32.592338347Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592339947Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:32.592341647Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:32.592343147Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:32.592344947Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592346547Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:32.592348247Z     raise exc
+app-1  | 2026-11-16T19:49:32.592349747Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:32.592351447Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:32.592353147Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:32.592354847Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592356347Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:32.592358047Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592360747Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:32.592362547Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592364047Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:32.592365747Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:32.592367347Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:32.592369247Z     raise exc
+app-1  | 2026-11-16T19:49:32.592370747Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:32.592372447Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:32.592373947Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:32.592375647Z     response = await f(request)
+app-1  | 2026-11-16T19:49:32.592377247Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592378747Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:32.592382347Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:32.592384047Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592385547Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:32.592387247Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:32.592388947Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592390547Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:32.592392247Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:32.592393747Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592395347Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:32.592396947Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:32.592398547Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592400147Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:32.592401847Z     return await future
+app-1  | 2026-11-16T19:49:32.592403447Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592404947Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:32.592406647Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:32.592408247Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592409847Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:32.592411547Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:32.592413147Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592414947Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:32.592416647Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:32.592418247Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592419747Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:32.592421447Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:32.592422947Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592424447Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:32.592426247Z     session.execute(
+app-1  | 2026-11-16T19:49:32.592427747Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:32.592429447Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:32.592431047Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592432547Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:32.592445247Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:32.592447747Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592449447Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:32.592451147Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:32.592452747Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592454347Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:32.592456447Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:32.592458147Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:32.592459747Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592461247Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:32.592462947Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:32.592464447Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592465947Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:32.592467647Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:32.592469147Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592470747Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:32.592472347Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:32.592473947Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592475447Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:32.592477147Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:32.592478647Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592480447Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:32.592482147Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:32.592483747Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592485247Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:32.592487047Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:32.592488747Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592490247Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:32.592491947Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:32.592493547Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:32.592495047Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:32.592498247Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:32.592499847Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:33.117650923Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:33.117692523Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:33.117695023Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:33.117697123Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:33.117698823Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117700523Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:33.117702223Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117703923Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117705523Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:33.117707223Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117708923Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:33.117710623Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117712323Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:33.117714023Z     raise exc
+app-1  | 2026-11-16T19:49:33.117715623Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:33.117717423Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:33.117719023Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:33.117720723Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117722323Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:33.117724023Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:33.117725623Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:33.117727423Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117729123Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:33.117730823Z     raise exc
+app-1  | 2026-11-16T19:49:33.117732423Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:33.117734123Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:33.117751123Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:33.117753223Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117754923Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:33.117756623Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117759423Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:33.117761223Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117762823Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:33.117764523Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:33.117766223Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:33.117767923Z     raise exc
+app-1  | 2026-11-16T19:49:33.117770423Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:33.117773023Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:33.117775323Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:33.117777823Z     response = await f(request)
+app-1  | 2026-11-16T19:49:33.117780123Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117782423Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:33.117785023Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:33.117787423Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117789723Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:33.117792323Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:33.117794723Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117797423Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:33.117800023Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:33.117802523Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117804923Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:33.117807423Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:33.117809623Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117811823Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:33.117814423Z     return await future
+app-1  | 2026-11-16T19:49:33.117816923Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117822423Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:33.117825423Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:33.117827923Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117830223Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:33.117832923Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:33.117854523Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117858223Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:33.117861023Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:33.117863823Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117868123Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:33.117870923Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:33.117873423Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117875723Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:33.117878323Z     session.execute(
+app-1  | 2026-11-16T19:49:33.117880723Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:33.117883323Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:33.117885923Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117888423Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:33.117891123Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:33.117893423Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117895823Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:33.117898523Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:33.117901123Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117902823Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:33.117905623Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:33.117907323Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:33.117908823Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117910423Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:33.117912123Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:33.117913623Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117915223Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:33.117916923Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:33.117921923Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117923623Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:33.117925323Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:33.117927023Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117928623Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:33.117930423Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:33.117931923Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117934123Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:33.117935823Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:33.117937423Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117939023Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:33.117940823Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:33.117942323Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117943923Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:33.117945723Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:33.117947223Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:33.117948823Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:33.117950523Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:33.117952123Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:34.546910591Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:34.546963791Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:34.546968491Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:34.546971991Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:34.546974891Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.546977591Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:34.546980591Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.546983291Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.546985991Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:34.546988691Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.546991491Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:34.547010291Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547013291Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:34.547016291Z     raise exc
+app-1  | 2026-11-16T19:49:34.547018891Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:34.547021791Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:34.547024591Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:34.547027391Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547030191Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:34.547032991Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:34.547035791Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:34.547038791Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547041591Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:34.547044491Z     raise exc
+app-1  | 2026-11-16T19:49:34.547046991Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:34.547049891Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:34.547052691Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:34.547055491Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547057991Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:34.547060391Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547064191Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:34.547067091Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547069691Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:34.547072591Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.547077791Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:34.547080791Z     raise exc
+app-1  | 2026-11-16T19:49:34.547083291Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:34.547086091Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:34.547088791Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:34.547091691Z     response = await f(request)
+app-1  | 2026-11-16T19:49:34.547097191Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547099791Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:34.547102691Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:34.547105391Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547107991Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:34.547110991Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:34.547113691Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547116391Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:34.547119291Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:34.547121891Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547124591Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:34.547127391Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:34.547129891Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547132591Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:34.547135991Z     return await future
+app-1  | 2026-11-16T19:49:34.547139291Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547141991Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:34.547144491Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:34.547146591Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547148691Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:34.547150891Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:34.547153591Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547156791Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:34.547159291Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:34.547162391Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547164591Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:34.547167191Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:34.547169491Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547171891Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:34.547174691Z     session.execute(
+app-1  | 2026-11-16T19:49:34.547177191Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:34.547182491Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:34.547185091Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547187491Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:34.547190291Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:34.547192691Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547195191Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:34.547197991Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:34.547200691Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547203491Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:34.547206891Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:34.547209891Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:34.547212491Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547215191Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:34.547217891Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:34.547220691Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547223491Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:34.547226391Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:34.547228991Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547231691Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:34.547234591Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:34.547237291Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547239991Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:34.547242891Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:34.547245491Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547248791Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:34.547251491Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:34.547254291Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547256891Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:34.547259791Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:34.547262491Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547264991Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:34.547270391Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:34.547273191Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.547275991Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:34.547278891Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:34.547281591Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:34.917432809Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:34.917484009Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:34.917487809Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:34.917490709Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:34.917492909Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917495109Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:34.917497609Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917499809Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917502109Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:34.917504409Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917506809Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:34.917509309Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917511709Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:34.917514309Z     raise exc
+app-1  | 2026-11-16T19:49:34.917516609Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:34.917519309Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:34.917521709Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:34.917524209Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917526509Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:34.917529009Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:34.917531309Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:34.917534009Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917536409Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:34.917538909Z     raise exc
+app-1  | 2026-11-16T19:49:34.917541009Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:34.917560609Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:34.917563309Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:34.917566109Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917570009Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:34.917572509Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917576609Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:34.917579409Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917582109Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:34.917584409Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:34.917587109Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:34.917589709Z     raise exc
+app-1  | 2026-11-16T19:49:34.917591909Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:34.917594309Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:34.917596709Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:34.917599109Z     response = await f(request)
+app-1  | 2026-11-16T19:49:34.917601509Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917603709Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:34.917606109Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:34.917608409Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917610709Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:34.917613409Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:34.917615609Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917617809Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:34.917620509Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:34.917623009Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917625409Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:34.917628209Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:34.917630709Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917633109Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:34.917639609Z     return await future
+app-1  | 2026-11-16T19:49:34.917642109Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917644809Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:34.917647509Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:34.917649909Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917652409Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:34.917654909Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:34.917657409Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917660109Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:34.917662609Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:34.917664909Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917667409Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:34.917670309Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:34.917672709Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917674909Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:34.917677609Z     session.execute(
+app-1  | 2026-11-16T19:49:34.917679809Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:34.917682209Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:34.917684709Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917687009Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:34.917689409Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:34.917691609Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917693709Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:34.917707509Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:34.917711109Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917713509Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:34.917716509Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:34.917719009Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:34.917721209Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917723509Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:34.917725909Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:34.917728209Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917734309Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:34.917736809Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:34.917739209Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917741409Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:34.917743809Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:34.917746009Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917748309Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:34.917750809Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:34.917753009Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917756109Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:34.917758609Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:34.917760809Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917762909Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:34.917765409Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:34.917767509Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917769709Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:34.917772109Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:34.917783610Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:34.917786710Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:34.917789310Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:34.917791610Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:35.976535462Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:35.976577862Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:35.976582262Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:35.976586162Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:35.976589362Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976592462Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:35.976595762Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976598862Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976602062Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:35.976623062Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976626462Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:35.976629762Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976633062Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:35.976636462Z     raise exc
+app-1  | 2026-11-16T19:49:35.976639562Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:35.976642962Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:35.976645962Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:35.976649162Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976652362Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:35.976655562Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:35.976658862Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:35.976662162Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976665362Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:35.976668662Z     raise exc
+app-1  | 2026-11-16T19:49:35.976671662Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:35.976674962Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:35.976678162Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:35.976681462Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976684562Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:35.976687762Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976692962Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:35.976696262Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976699362Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:35.976702762Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:35.976706062Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:35.976709362Z     raise exc
+app-1  | 2026-11-16T19:49:35.976712462Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:35.976715762Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:35.976718862Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:35.976725062Z     response = await f(request)
+app-1  | 2026-11-16T19:49:35.976728262Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976731362Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:35.976734762Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:35.976739062Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976742262Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:35.976745762Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:35.976748862Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976751962Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:35.976755362Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:35.976758462Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976761762Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:35.976765062Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:35.976768162Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976771262Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:35.976774662Z     return await future
+app-1  | 2026-11-16T19:49:35.976777662Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976780762Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:35.976784162Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:35.976787462Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976790462Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:35.976793762Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:35.976797062Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976800762Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:35.976804162Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:35.976807162Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976810162Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:35.976813562Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:35.976816562Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976819462Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:35.976822862Z     session.execute(
+app-1  | 2026-11-16T19:49:35.976828562Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:35.976832162Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:35.976835262Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976838262Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:35.976841662Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:35.976844662Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976847662Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:35.976851062Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:35.976854262Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976857462Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:35.976861062Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:35.976864362Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:35.976867562Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976870662Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:35.976873962Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:35.976877062Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976880062Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:35.976883362Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:35.976886362Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976889462Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:35.976892962Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:35.976895962Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976899062Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:35.976902362Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:35.976905462Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976908762Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:35.976912162Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:35.976915362Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976918562Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:35.976921962Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:35.976925062Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976930962Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:35.976934462Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:35.976937462Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:35.976940362Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:35.976943662Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:35.976946962Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:36.635804895Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:36.635835995Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:36.635838195Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:36.635840095Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:36.635841795Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635843295Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:36.635844895Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635846395Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635847995Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:36.635850095Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635851695Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:36.635853495Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635855095Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:36.635856795Z     raise exc
+app-1  | 2026-11-16T19:49:36.635858295Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:36.635859995Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:36.635861495Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:36.635863095Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635864695Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:36.635866395Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:36.635867995Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:36.635869695Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635871295Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:36.635886495Z     raise exc
+app-1  | 2026-11-16T19:49:36.635888295Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:36.635889995Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:36.635891595Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:36.635893195Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635894795Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:36.635896495Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635898895Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:36.635900495Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635902095Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:36.635903695Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.635905295Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:36.635906895Z     raise exc
+app-1  | 2026-11-16T19:49:36.635908395Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:36.635909995Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:36.635911495Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:36.635913095Z     response = await f(request)
+app-1  | 2026-11-16T19:49:36.635914695Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635916195Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:36.635917795Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:36.635919295Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635920895Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:36.635922595Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:36.635924095Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635925695Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:36.635927295Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:36.635928895Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635930395Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:36.635932095Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:36.635933695Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635937195Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:36.635939095Z     return await future
+app-1  | 2026-11-16T19:49:36.635940595Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635942195Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:36.635943795Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:36.635945395Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635946895Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:36.635948495Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:36.635950095Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635951895Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:36.635953595Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:36.635955095Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635956595Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:36.635958295Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:36.635959795Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635961195Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:36.635962895Z     session.execute(
+app-1  | 2026-11-16T19:49:36.635964395Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:36.635966095Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:36.635967595Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635969095Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:36.635970795Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:36.635972295Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635973795Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:36.635975495Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:36.635977095Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635978695Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:36.635980595Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:36.635982295Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:36.635983795Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.635985295Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:36.635988395Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:36.635989895Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636000395Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:36.636003495Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:36.636006295Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636007795Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:36.636009495Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:36.636011095Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636012595Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:36.636014395Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:36.636015995Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636020195Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:36.636022095Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:36.636023695Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636025295Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:36.636026995Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:36.636028495Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636029995Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:36.636031695Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:36.636033295Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.636035395Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:36.636037095Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:36.636038695Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+app-1  | 2026-11-16T19:49:36.963329212Z ERROR:    Exception in ASGI application
+app-1  | 2026-11-16T19:49:36.963365212Z Traceback (most recent call last):
+app-1  | 2026-11-16T19:49:36.963368912Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+app-1  | 2026-11-16T19:49:36.963372012Z     result = await app(  # type: ignore[func-returns-value]
+app-1  | 2026-11-16T19:49:36.963374412Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963377012Z   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+app-1  | 2026-11-16T19:49:36.963379512Z     return await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963382412Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963398912Z   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+app-1  | 2026-11-16T19:49:36.963401912Z     await super().__call__(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963404312Z   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+app-1  | 2026-11-16T19:49:36.963407012Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963409312Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+app-1  | 2026-11-16T19:49:36.963411812Z     raise exc
+app-1  | 2026-11-16T19:49:36.963414212Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+app-1  | 2026-11-16T19:49:36.963417012Z     await self.app(scope, receive, _send)
+app-1  | 2026-11-16T19:49:36.963419312Z   File "/project/app/observation.py", line 59, in __call__
+app-1  | 2026-11-16T19:49:36.963421712Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963424612Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
+app-1  | 2026-11-16T19:49:36.963427212Z     await self.app(scope, receive, send_wrapper)
+app-1  | 2026-11-16T19:49:36.963429612Z   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+app-1  | 2026-11-16T19:49:36.963432112Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963434512Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:36.963437012Z     raise exc
+app-1  | 2026-11-16T19:49:36.963439312Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:36.963441712Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:36.963443912Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+app-1  | 2026-11-16T19:49:36.963446512Z     await self.middleware_stack(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963449312Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+app-1  | 2026-11-16T19:49:36.963452012Z     await route.handle(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963456312Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+app-1  | 2026-11-16T19:49:36.963458912Z     await self.app(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963461312Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+app-1  | 2026-11-16T19:49:36.963463912Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+app-1  | 2026-11-16T19:49:36.963466412Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+app-1  | 2026-11-16T19:49:36.963469012Z     raise exc
+app-1  | 2026-11-16T19:49:36.963471412Z   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+app-1  | 2026-11-16T19:49:36.963477112Z     await app(scope, receive, sender)
+app-1  | 2026-11-16T19:49:36.963479712Z   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+app-1  | 2026-11-16T19:49:36.963482312Z     response = await f(request)
+app-1  | 2026-11-16T19:49:36.963485512Z                ^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963488112Z   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+app-1  | 2026-11-16T19:49:36.963490812Z     solved_result = await solve_dependencies(
+app-1  | 2026-11-16T19:49:36.963493312Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963495612Z   File "/usr/local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 640, in solve_dependencies
+app-1  | 2026-11-16T19:49:36.963498312Z     solved = await run_in_threadpool(call, **solved_result.values)
+app-1  | 2026-11-16T19:49:36.963500712Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963503212Z   File "/usr/local/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+app-1  | 2026-11-16T19:49:36.963505612Z     return await anyio.to_thread.run_sync(func)
+app-1  | 2026-11-16T19:49:36.963508012Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963510312Z   File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+app-1  | 2026-11-16T19:49:36.963512812Z     return await get_async_backend().run_sync_in_worker_thread(
+app-1  | 2026-11-16T19:49:36.963515212Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963517412Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+app-1  | 2026-11-16T19:49:36.963520012Z     return await future
+app-1  | 2026-11-16T19:49:36.963522312Z            ^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963524812Z   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+app-1  | 2026-11-16T19:49:36.963527412Z     result = context.run(func, *args)
+app-1  | 2026-11-16T19:49:36.963529812Z              ^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963532112Z   File "/project/app/auth.py", line 31, in current_user
+app-1  | 2026-11-16T19:49:36.963534512Z     user = db.get(User, user_id) if isinstance(user_id, int) else None
+app-1  | 2026-11-16T19:49:36.963537112Z            ^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963539912Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+app-1  | 2026-11-16T19:49:36.963542712Z     return self._get_impl(
+app-1  | 2026-11-16T19:49:36.963545112Z            ^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963547312Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+app-1  | 2026-11-16T19:49:36.963549812Z     return db_load_fn(
+app-1  | 2026-11-16T19:49:36.963552212Z            ^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963557212Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+app-1  | 2026-11-16T19:49:36.963559912Z     session.execute(
+app-1  | 2026-11-16T19:49:36.963562212Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+app-1  | 2026-11-16T19:49:36.963564512Z     return self._execute_internal(
+app-1  | 2026-11-16T19:49:36.963566612Z            ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963568712Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+app-1  | 2026-11-16T19:49:36.963571112Z     conn = self._connection_for_bind(bind)
+app-1  | 2026-11-16T19:49:36.963573312Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963575612Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+app-1  | 2026-11-16T19:49:36.963578312Z     return trans._connection_for_bind(engine, execution_options)
+app-1  | 2026-11-16T19:49:36.963580812Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963583312Z   File "<string>", line 2, in _connection_for_bind
+app-1  | 2026-11-16T19:49:36.963586312Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+app-1  | 2026-11-16T19:49:36.963588812Z     ret_value = fn(self, *arg, **kw)
+app-1  | 2026-11-16T19:49:36.963591212Z                 ^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963593712Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+app-1  | 2026-11-16T19:49:36.963596112Z     conn = bind.connect()
+app-1  | 2026-11-16T19:49:36.963598312Z            ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963600512Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+app-1  | 2026-11-16T19:49:36.963603112Z     return self._connection_cls(self)
+app-1  | 2026-11-16T19:49:36.963605412Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963607812Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+app-1  | 2026-11-16T19:49:36.963610412Z     self._dbapi_connection = engine.raw_connection()
+app-1  | 2026-11-16T19:49:36.963612812Z                              ^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963615412Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+app-1  | 2026-11-16T19:49:36.963617912Z     return self.pool.connect()
+app-1  | 2026-11-16T19:49:36.963620212Z            ^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963623612Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+app-1  | 2026-11-16T19:49:36.963626512Z     return _ConnectionFairy._checkout(self)
+app-1  | 2026-11-16T19:49:36.963628712Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963631112Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+app-1  | 2026-11-16T19:49:36.963636312Z     fairy = _ConnectionRecord.checkout(pool)
+app-1  | 2026-11-16T19:49:36.963638712Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963641212Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+app-1  | 2026-11-16T19:49:36.963644112Z     rec = pool._do_get()
+app-1  | 2026-11-16T19:49:36.963646412Z           ^^^^^^^^^^^^^^
+app-1  | 2026-11-16T19:49:36.963648712Z   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 168, in _do_get
+app-1  | 2026-11-16T19:49:36.963651012Z     raise exc.TimeoutError(
+app-1  | 2026-11-16T19:49:36.963653212Z sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)

@@ -1,0 +1,30 @@
+ Container sergey_rodionov_dz2-k6-run-25a6a1779d6b Creating 
+ Container sergey_rodionov_dz2-k6-run-25a6a1779d6b Created 
+time="2026-11-16T19:52:56Z" level=info msg="sergey_rodionov | WORKING | heavy | 1 req/s | 30s | VUs 20" source=console
+
+     ✓ summary
+
+     checks.........................: 100.00% 31 out of 31
+     data_received..................: 846 kB  18 kB/s
+     data_sent......................: 6.8 kB  146 B/s
+     http_req_blocked...............: count=32 med=397.6µs  p(95)=766.04µs max=888.8µs
+     http_req_connecting............: count=32 med=270.8µs  p(95)=501.85µs max=615.6µs
+     http_req_duration..............: count=32 med=10.94s   p(95)=20.46s   max=21.47s 
+       { expected_response:true }...: count=32 med=10.94s   p(95)=20.46s   max=21.47s 
+     ✗ { phase:load }...............: count=31 med=11.34s   p(95)=20.5s    max=21.47s 
+     http_req_failed................: 0.00%   0 out of 32
+     ✓ { phase:load }...............: 0.00%   0 out of 31
+     http_req_receiving.............: count=32 med=298.25µs p(95)=5.9ms    max=92.28ms
+     http_req_sending...............: count=32 med=68.25µs  p(95)=126.34µs max=179µs  
+     http_req_tls_handshaking.......: count=32 med=0s       p(95)=0s       max=0s     
+     http_req_waiting...............: count=32 med=10.94s   p(95)=20.46s   max=21.47s 
+     http_reqs......................: 32      0.686232/s
+     iteration_duration.............: count=31 med=11.34s   p(95)=20.5s    max=21.47s 
+     iterations.....................: 31      0.664787/s
+     load_window_start..............: 1       0.021445/s
+   ✓ operation_errors...............: 0.00%   0 out of 31
+     vus............................: 2       min=1        max=14
+     vus_max........................: 20      min=20       max=20
+
+time="2026-11-16T19:53:43Z" level=error msg="thresholds on metrics 'http_req_duration{phase:load}' have been crossed"
+

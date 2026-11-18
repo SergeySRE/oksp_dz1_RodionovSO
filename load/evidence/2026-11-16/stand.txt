@@ -1,0 +1,10 @@
+Machine and container settings for sergey_rodionov_dz2
+2026-11-16T22:48:51+03:00
+Linux 6.18.58.1-microsoft-standard-WSL2 x86_64 GNU/Linux
+CPU(s):                                  8
+Model name:                              11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+Docker Server=29.8.0 CPUs=8 MemoryBytes=8155455488
+Docker Compose version v5.5.1
+/sergey_rodionov_dz2-app-1 image=sergey_rodionov_dz2-app cpu_quota=0 nano_cpus=0 memory=0
+/sergey_rodionov_dz2-db-1 image=postgres:16.10-bookworm cpu_quota=0 nano_cpus=0 memory=0
+f7fc82664459e7f1b85d78586118412f69676e24
